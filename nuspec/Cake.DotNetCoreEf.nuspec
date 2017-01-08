@@ -6,8 +6,8 @@
       <authors>mvput</authors>
       <owners>mvput,cake-contrib</owners>
       <title>Cake.DotNetCoreEf</title>
-      <description>Cake Build addin for using the .NET Core EF command line interface (CLI)</description>
-      <summary>.NET Core Entity Framework addin for cake build.</summary>
+      <description>Cake Build addin for using the .NET Core EntityFrameworkCore command line interface (CLI)</description>
+      <summary>.NET Core EntityFrameworkCore addin for cake build.</summary>
       <licenseUrl>https://github.com/cake-contrib/Cake.DotNetCoreEf/blob/master/LICENSE</licenseUrl>
       <projectUrl>https://github.com/cake-contrib/Cake.DotNetCoreEf</projectUrl>
       <iconUrl>https://raw.githubusercontent.com/cake-build/graphics/master/png/cake-small.png</iconUrl>

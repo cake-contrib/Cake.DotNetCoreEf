@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+      <id>Cake.DotNetCoreEf</id>
+      <version>0.0.0</version>
+      <authors>mvput</authors>
+      <owners>mvput,cake-contrib</owners>
+      <title>Cake.DotNetCoreEf</title>
+      <description>Cake Build addin for using the .NET Core EF command line interface (CLI)</description>
+      <summary>.NET Core Entity Framework addin for cake build.</summary>
+      <licenseUrl>https://github.com/cake-contrib/Cake.DotNetCoreEf/blob/master/LICENSE</licenseUrl>
+      <projectUrl>https://github.com/cake-contrib/Cake.DotNetCoreEf</projectUrl>
+      <iconUrl>https://raw.githubusercontent.com/cake-build/graphics/master/png/cake-small.png</iconUrl>
+      <requireLicenseAcceptance>false</requireLicenseAcceptance>
+      <copyright>Copyright (c) Cake Contributions 2017</copyright>
+      <releaseNotes></releaseNotes>
+      <tags>cake script cli netcore efcore</tags>
+       <dependencies>
+           <dependency id="Cake.Core" version="0.17.0" />
+       </dependencies>
+   </metadata>
+   <files>
+      <file src="Cake.DotNetCoreEf.dll" target="lib/net45" />
+      <file src="Cake.DotNetCoreEf.xml" target="lib/net45" />
+      <file src="LICENSE" />
+   </files>
+</package>

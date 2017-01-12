@@ -40,6 +40,10 @@
     <NoWarn>CS0436,CS1591,CS0436,CS0168,CS0649,CS1573,CS1591,CS1572,CS0114,CS1570,CS0618,CS1587,CS1734,CS0114,CS0659,CS0612,CS0246,S1571,CS1574</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cake.Common, Version=0.17.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cake.Common.0.17.0\lib\net45\Cake.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Cake.Core, Version=0.17.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Cake.Core.0.17.0\lib\net45\Cake.Core.dll</HintPath>
       <Private>True</Private>
@@ -77,7 +81,10 @@
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
+    <Compile Include="Fixtures\Database\DotNetCoreEfDatabaseDropperFixture.cs" />
+    <Compile Include="Fixtures\DotNetCoreEfFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unit\Database\DotNetCoreEfDatabaseDropperTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

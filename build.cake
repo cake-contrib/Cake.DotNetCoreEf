@@ -23,10 +23,8 @@ var isMasterBranch = System.String.Equals("master", branchName, System.StringCom
 var isTagCommit = false;
 var tagName = bool.TryParse(EnvironmentVariable("APPVEYOR_REPO_TAG"), out isTagCommit) ? (isTagCommit ? EnvironmentVariable("APPVEYOR_REPO_TAG_NAME") : string.Empty) : string.Empty;
 
-var releaseNotes = ParseReleaseNotes("./ReleaseNotes.md");
-
 var buildNumber = AppVeyor.Environment.Build.Number;
-var version = releaseNotes.Version.ToString();
+var version = "0.1.0";
 var semVersion = local ? version : (version + string.Concat("-build-", buildNumber));
 
 var buildDir = "./src/Cake.DotNetCoreEf/bin/" + configuration;
@@ -145,7 +143,6 @@ Task("Create-NuGet-Packages")
     NuGetPack("./nuspec/Cake.DotNetCoreEf.nuspec", new NuGetPackSettings
     {
         Version = version,
-        ReleaseNotes = releaseNotes.Notes.ToArray(),
         BasePath = binDir,
         OutputDirectory = nugetRoot,
         Symbols = false,

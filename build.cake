@@ -125,7 +125,6 @@ Task("Copy-Files")
     .Does(() =>
 {
     CopyFileToDirectory(buildDir + "/Cake.DotNetCoreEf.dll", binDir);
-    CopyFileToDirectory(buildDir + "/Cake.DotNetCoreEf.xml", binDir);
     CopyFiles(new FilePath[] { "LICENSE", "README.md" }, binDir);
 });
 

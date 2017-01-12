@@ -83,7 +83,7 @@ namespace Cake.DotNetCoreEf
             }
 
             var runner = new DotNetCoreEfDatabaseDropper(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            runner.Run(project, arguments, settings);
+            runner.Drop(project, arguments, settings);
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Cake.DotNetCoreEf
             }
 
             var runner = new DotNetCoreEfDatabaseUpdater(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
-            runner.Run(project, arguments, settings);
+            runner.Update(project, arguments, settings);
         }
     }
 }

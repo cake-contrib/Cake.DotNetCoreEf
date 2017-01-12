@@ -36,7 +36,7 @@ namespace Cake.DotNetCoreEf.Database
         /// <param name="project">The target project path.</param>
         /// <param name="arguments">The arguments.</param>
         /// <param name="settings">The settings.</param>
-        public void Run(string project, ProcessArgumentBuilder arguments, DotNetCoreEfDatabaseDropSettings settings)
+        public void Drop(string project, ProcessArgumentBuilder arguments, DotNetCoreEfDatabaseDropSettings settings)
         {
             if (settings == null)
             {

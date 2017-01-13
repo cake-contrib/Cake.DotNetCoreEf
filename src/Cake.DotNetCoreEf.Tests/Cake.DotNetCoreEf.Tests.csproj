@@ -81,6 +81,7 @@
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
+    <Compile Include="ExceptionAsserts.cs" />
     <Compile Include="Fixtures\Database\DotNetCoreEfDatabaseDropperFixture.cs" />
     <Compile Include="Fixtures\DotNetCoreEfFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

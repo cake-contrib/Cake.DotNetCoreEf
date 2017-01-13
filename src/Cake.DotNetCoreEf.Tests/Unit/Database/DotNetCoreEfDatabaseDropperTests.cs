@@ -19,7 +19,78 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Database
             var result = Record.Exception(() => fixture.Run());
 
             // Then
-            //Assert.IsArgumentNullException(result, "settings");
+            AssertExtensions.IsArgumentNullException(result, "settings");
+        }
+
+        [Fact]
+        public void Should_Throw_If_Process_Was_Not_Started()
+        {
+            // Given
+            var fixture = new DotNetCoreEfDatabaseDropperFixture();
+            fixture.Project = "./src/*";
+            fixture.GivenProcessCannotStart();
+
+            // When
+            var result = Record.Exception(() => fixture.Run());
+
+            // Then
+            AssertExtensions.IsCakeException(result, ".NET Core CLI: Process was not started.");
+        }
+
+        [Fact]
+        public void Should_Throw_If_Process_Has_A_Non_Zero_Exit_Code()
+        {
+            // Given
+            var fixture = new DotNetCoreEfDatabaseDropperFixture();
+            fixture.Project = "./src/*";
+            fixture.GivenProcessExitsWithCode(1);
+
+            // When
+            var result = Record.Exception(() => fixture.Run());
+
+            // Then
+            AssertExtensions.IsCakeException(result, ".NET Core CLI: Process returned an error (exit code 1).");
+        }
+
+        [Fact]
+        public void Should_Add_Mandatory_Arguments()
+        {
+            // Given
+            var fixture = new DotNetCoreEfDatabaseDropperFixture();
+
+            // When
+            var result = fixture.Run();
+
+            // Then
+            Assert.Equal("ef database drop", result.Args);
+        }
+
+        [Fact]
+        public void Should_Add_Path_Arguments()
+        {
+            // Given
+            var fixture = new DotNetCoreEfDatabaseDropperFixture();
+            fixture.Project = "./tools/tool/";
+            fixture.Arguments = "--args=\"value\"";
+            // When
+            var result = fixture.Run();
+
+            // Then
+            Assert.Equal("ef database drop --project \"./tools/tool/\" -- --args=\"value\"", result.Args);
+        }
+
+        [Fact]
+        public void Should_Add_Additional_Settings()
+        {
+            // Given
+            var fixture = new DotNetCoreEfDatabaseDropperFixture();
+            fixture.Settings.Context = "CakeContext";
+            fixture.Settings.Force = true; ;
+            // When
+            var result = fixture.Run();
+
+            // Then
+            Assert.Equal("ef database drop --context \"CakeContext\" --force", result.Args);
         }
     }
 }

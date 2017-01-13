@@ -1,10 +1,5 @@
 ﻿using Cake.Core.IO;
 using Cake.Testing.Fixtures;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cake.DotNetCoreEf.Tests.Fixtures
 {
@@ -20,7 +15,6 @@ namespace Cake.DotNetCoreEf.Tests.Fixtures
         protected override ToolFixtureResult CreateResult(FilePath path, ProcessSettings process)
         {
             return new ToolFixtureResult(path, process);
-
         }
     }
 }

@@ -1,9 +1,6 @@
 ﻿using Cake.DotNetCoreEf.Tests.Fixtures.Database;
 using Cake.Testing;
 using Xunit;
-using Cake.Core;
-using NSubstitute;
-using Xunit;
 
 namespace Cake.DotNetCoreEf.Tests.Unit.Database
 {

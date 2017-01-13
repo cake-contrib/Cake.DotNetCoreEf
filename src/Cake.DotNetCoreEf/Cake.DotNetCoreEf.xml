@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cake.DotNetCoreEf</name>
+    </assembly>
+    <members>
+        <member name="T:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseUpdater">
+            <summary>
+            Support for updating the database using .NET Core cli tooling
+            </summary>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseUpdater.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseUpdater" /> class.
+            </summary>
+            <param name="fileSystem">The file system.</param>
+            <param name="environment">The environment.</param>
+            <param name="processRunner">The process runner.</param>
+            <param name="tools">The tool locator.</param>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseUpdater.Update(System.String,Cake.Core.IO.ProcessArgumentBuilder,Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseUpdateSettings)">
+            <summary>
+            Runs the project using the specified path with arguments and settings.
+            </summary>
+            <param name="project">The target project path.</param>
+            <param name="arguments">The arguments.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="T:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseUpdateSettings">
+            <summary>
+            Contains settings used by <see cref="T:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseUpdater"/>
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseUpdateSettings.Context">
+            <summary>
+            The DbContext to use. If omitted, the default DbContext is used
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseUpdateSettings.Migration">
+            <summary>
+            The target migration. If '0', all migrations will be reverted. If omitted, all pending migrations will be applied
+            </summary>
+        </member>
+        <member name="T:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropper">
+            <summary>
+            Support for dropping the database using .NET Core cli tooling
+            </summary>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropper.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropper" /> class.
+            </summary>
+            <param name="fileSystem">The file system.</param>
+            <param name="environment">The environment.</param>
+            <param name="processRunner">The process runner.</param>
+            <param name="tools">The tool locator.</param>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropper.Drop(System.String,Cake.Core.IO.ProcessArgumentBuilder,Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropSettings)">
+            <summary>
+            Runs the project using the specified path with arguments and settings.
+            </summary>
+            <param name="project">The target project path.</param>
+            <param name="arguments">The arguments.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="T:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropSettings">
+            <summary>
+            Contains settings used by <see cref="T:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropper"/>
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropSettings.Context">
+            <summary>
+            The DbContext to use. If omitted, the default DbContext is used
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropSettings.Force">
+            <summary>
+            Drop without confirmation
+            </summary>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfDatabaseDrop(Cake.Core.ICakeContext,System.String)">
+            <summary>
+            Drop the database with path.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="project">The project path.</param>
+            <example>
+            <code>
+                DotNetCoreEfDatabaseDrop("./src/Project");
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfDatabaseDrop(Cake.Core.ICakeContext,System.String,Cake.Core.IO.ProcessArgumentBuilder)">
+            <summary>
+            Drop the database with path and arguments.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="project">The project path.</param>
+            <param name="arguments">The arguments.</param>
+            <example>
+            <code>
+                DotNetCoreEfDatabaseDrop("./src/Project", "--args");
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfDatabaseDrop(Cake.Core.ICakeContext,System.String,Cake.Core.IO.ProcessArgumentBuilder,Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropSettings)">
+             <summary>
+             Drop the database with settings.
+             </summary>
+             <param name="context">The context.</param>
+             <param name="project">The project path.</param>
+             <param name="arguments">The arguments.</param>
+             <param name="settings">The settings.</param>
+             <example>
+             <code>
+                 var settings = new DotNetCoreEfDatabaseDropSettings
+                 {
+                     Context = SchoolContext
+                 };
+            
+                 DotNetCoreEfDatabaseDrop("./src/Project", "--args", settings);
+             </code>
+             </example>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfDatabaseUpdate(Cake.Core.ICakeContext,System.String)">
+            <summary>
+            Update the database.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="project">The project path.</param>
+            <example>
+            <code>
+                DotNetCoreEfDatabaseUpdate("./src/Project");
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfDatabaseUpdate(Cake.Core.ICakeContext,System.String,Cake.Core.IO.ProcessArgumentBuilder)">
+            <summary>
+            Update the database with project and arguments.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="project">The project path.</param>
+            <param name="arguments">The arguments.</param>
+            <example>
+            <code>
+                DotNetCoreEfDatabaseUpdate("./src/Project", "--args");
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfDatabaseUpdate(Cake.Core.ICakeContext,System.String,Cake.Core.IO.ProcessArgumentBuilder,Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseUpdateSettings)">
+             <summary>
+             Update the database with settings.
+             </summary>
+             <param name="context">The context.</param>
+             <param name="project">The project path.</param>
+             <param name="arguments">The arguments.</param>
+             <param name="settings">The settings.</param>
+             <example>
+             <code>
+                 var settings = new DotNetCoreEfDatabaseUpdateSettings
+                 {
+                     Context = SchoolContext
+                 };
+            
+                 DotNetCoreEfDatabaseUpdate("./src/Project", "--args", settings);
+             </code>
+             </example>
+        </member>
+        <member name="T:Cake.DotNetCoreEf.DotNetCoreEfTool`1">
+            <summary>
+            Base class for .NET Core EntityFrameworkCore  tools.
+            </summary>
+            <typeparam name="TSettings"></typeparam>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfTool`1.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator)">
+            <summary>
+            
+            </summary>
+            <param name="fileSystem"></param>
+            <param name="environment"></param>
+            <param name="processRunner"></param>
+            <param name="tools"></param>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfTool`1.CreateArgumentBuilder(`0)">
+            <summary>
+            Creates a <see cref="T:Cake.Core.IO.ProcessArgumentBuilder"/> and adds common commandline arguments.
+            </summary>
+            <param name="settings">The settings.</param>
+            <returns>Instance of <see cref="T:Cake.Core.IO.ProcessArgumentBuilder"/>.</returns>
+        </member>
+        <member name="T:Cake.DotNetCoreEf.DotNetCoreEfSettings">
+            <summary>
+            Contains common settings used by <see cref="T:Cake.DotNetCoreEf.DotNetCoreEfTool`1" />.
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.DotNetCoreEfSettings.Help">
+            <summary>
+            Show help information
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.DotNetCoreEfSettings.Environment">
+            <summary>
+            The environment to use. If omitted, "Development" is used.
+            </summary>
+        </member>
+        <member name="T:Cake.DotNetCoreEf.NamespaceDoc">
+            <summary>
+            This namespace contains DotNetCoreEf aliases for the DotNetCoreEf command line utility.
+            </summary>
+        </member>
+    </members>
+</doc>

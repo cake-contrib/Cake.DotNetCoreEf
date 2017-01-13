@@ -14,6 +14,8 @@ namespace Cake.DotNetCoreEf.Database
     /// </summary>
     public class DotNetCoreEfDatabaseUpdater : DotNetCoreEfTool<DotNetCoreEfDatabaseUpdateSettings>
     {
+        private readonly ICakeEnvironment _environment;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="DotNetCoreEfDatabaseUpdater" /> class.
         /// </summary>
@@ -27,6 +29,7 @@ namespace Cake.DotNetCoreEf.Database
             IProcessRunner processRunner, 
             IToolLocator tools) : base(fileSystem, environment, processRunner, tools)
         {
+            this._environment = environment;
         }
 
         /// <summary>
@@ -51,12 +54,17 @@ namespace Cake.DotNetCoreEf.Database
 
             builder.Append("ef");
             builder.Append("database");
-            builder.Append("drop");
+            builder.Append("update");
 
             // Specific path?
             if (project != null)
             {
                 settings.WorkingDirectory = project;
+            }
+                      
+            if (!string.IsNullOrWhiteSpace(settings.Migration))
+            {
+                builder.AppendQuoted(settings.Migration);
             }
 
             if (!string.IsNullOrEmpty(settings.Context))
@@ -65,15 +73,9 @@ namespace Cake.DotNetCoreEf.Database
                 builder.AppendQuoted(settings.Context);
             }
 
-            if (!string.IsNullOrWhiteSpace(settings.Migration))
-            {
-                builder.AppendQuoted(settings.Migration);
-            }
-
             // Arguments
             if (!arguments.IsNullOrEmpty())
             {
-                builder.Append("--");
                 arguments.CopyTo(builder);
             }
 

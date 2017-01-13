@@ -15,6 +15,8 @@ namespace Cake.DotNetCoreEf.Database
     /// </summary>
     public class DotNetCoreEfDatabaseDropper : DotNetCoreEfTool<DotNetCoreEfDatabaseDropSettings>
     {
+        private readonly ICakeEnvironment _environment;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="DotNetCoreEfDatabaseDropper" /> class.
         /// </summary>
@@ -28,6 +30,7 @@ namespace Cake.DotNetCoreEf.Database
             IProcessRunner processRunner, 
             IToolLocator tools) : base(fileSystem, environment, processRunner, tools)
         {
+            this._environment = environment;
         }
 
         /// <summary>
@@ -53,13 +56,12 @@ namespace Cake.DotNetCoreEf.Database
             builder.Append("ef");
             builder.Append("database");
             builder.Append("drop");
-
+            
             // Specific path?
             if (project != null)
             {
-                builder.Append("--project");
-                builder.AppendQuoted(project);
-            }           
+                settings.WorkingDirectory = project;
+            }
 
             if (!string.IsNullOrEmpty(settings.Context))
             {
@@ -75,7 +77,6 @@ namespace Cake.DotNetCoreEf.Database
             // Arguments
             if (!arguments.IsNullOrEmpty())
             {
-                builder.Append("--");
                 arguments.CopyTo(builder);
             }
 

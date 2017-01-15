@@ -39,15 +39,20 @@ namespace Cake.DotNetCoreEf
         /// <param name="arguments">The arguments.</param>
         /// <example>
         /// <code>
-        ///     DotNetCoreEfDatabaseDrop("./src/Project", "--args");
+        ///     var settings = new DotNetCoreEfDatabaseDropSettings
+        ///     {
+        ///         Context = SchoolContext
+        ///     };
+        ///     
+        ///     DotNetCoreEfDatabaseDrop("./src/Project", settings);
         /// </code>
         /// </example>
         [CakeMethodAlias]
         [CakeAliasCategory("DatabaseDrop")]
         [CakeNamespaceImport("Cake.DotNetCoreEf.Database")]
-        public static void DotNetCoreEfDatabaseDrop(this ICakeContext context, string project, ProcessArgumentBuilder arguments)
+        public static void DotNetCoreEfDatabaseDrop(this ICakeContext context, string project, DotNetCoreEfDatabaseDropSettings settings)
         {
-            context.DotNetCoreEfDatabaseDrop(project, arguments, null);
+            context.DotNetCoreEfDatabaseDrop(project, null, settings);
         }
 
         /// <summary>
@@ -112,15 +117,20 @@ namespace Cake.DotNetCoreEf
         /// <param name="arguments">The arguments.</param>
         /// <example>
         /// <code>
-        ///     DotNetCoreEfDatabaseUpdate("./src/Project", "--args");
+        ///     var settings = new DotNetCoreEfDatabaseUpdateSettings
+        ///     {
+        ///         Context = SchoolContext
+        ///     };
+        ///     
+        ///     DotNetCoreEfDatabaseUpdate("./src/Project", settings);
         /// </code>
         /// </example>
         [CakeMethodAlias]
         [CakeAliasCategory("DatabaseUpdate")]
         [CakeNamespaceImport("Cake.DotNetCoreEf.Database")]
-        public static void DotNetCoreEfDatabaseUpdate(this ICakeContext context, string project, ProcessArgumentBuilder arguments)
+        public static void DotNetCoreEfDatabaseUpdate(this ICakeContext context, string project, DotNetCoreEfDatabaseUpdateSettings settings)
         {
-            context.DotNetCoreEfDatabaseUpdate(project, arguments, null);
+            context.DotNetCoreEfDatabaseUpdate(project, null, settings);
         }
 
         /// <summary>

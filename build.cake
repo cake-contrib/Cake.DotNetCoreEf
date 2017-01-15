@@ -174,8 +174,8 @@ Task("Publish-MyGet")
 	.IsDependentOn("Create-NuGet-Packages")
     .WithCriteria(() => isRunningOnAppVeyor)
     .WithCriteria(() => !isPullRequest)
-    .WithCriteria(() => isMasterBranch)
-    .WithCriteria(() => isTagCommit)
+    .WithCriteria(() => !isMasterBranch)
+    .WithCriteria(() => !isTagCommit)
     .Does(() =>
 {
     var apiKey = EnvironmentVariable("MYGET_API_KEY");

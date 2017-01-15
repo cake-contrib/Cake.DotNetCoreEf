@@ -13,7 +13,6 @@ var appName = "Cake.DotNetCoreEf";
 //////////////////////////////////////////////////////////////////////
 // VARIABLES
 //////////////////////////////////////////////////////////////////////
-var artifacts = MakeAbsolute(Directory(Argument("artifactPath", "./artifacts")));
 var local = BuildSystem.IsLocalBuild;
 var isRunningOnAppVeyor = AppVeyor.IsRunningOnAppVeyor;
 var isPullRequest = AppVeyor.Environment.PullRequest.IsPullRequest;
@@ -195,7 +194,7 @@ Task("Upload-AppVeyor-Artifacts")
     .WithCriteria(() => isRunningOnAppVeyor)
     .Does(() =>
 {
-	foreach(var nupkg in GetFiles(artifacts +"/packages/*.nupkg")) 
+	foreach(var nupkg in GetFiles(nugetRoot + "/*.nupkg")) 
 	{
         AppVeyor.UploadArtifact(nupkg);
     }

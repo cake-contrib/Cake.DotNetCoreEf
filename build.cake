@@ -170,6 +170,27 @@ Task("Publish-Nuget")
     });
 });
 
+Task("Publish-MyGet")
+	.IsDependentOn("Create-NuGet-Packages")
+    .WithCriteria(() => isRunningOnAppVeyor)
+    .WithCriteria(() => !isPullRequest)
+    .WithCriteria(() => isMasterBranch)
+    .WithCriteria(() => isTagCommit)
+    .Does(() =>
+{
+    var apiKey = EnvironmentVariable("MYGET_API_KEY");
+	var mygetSource = EnvironmentVariable("MYGET_SOURCE");
+
+    if(string.IsNullOrEmpty(apiKey))    
+        throw new InvalidOperationException("Could not resolve MyGet API key.");
+
+    NuGetPush(nugetRoot + "/Cake.DotNetCoreEf." + version + ".nupkg", new NuGetPushSettings
+    {
+        ApiKey = apiKey,
+        Source = mygetSource
+    });
+});
+
 ///////////////////////////////////////////////////////////////////////////////
 // APPVEYOR
 ///////////////////////////////////////////////////////////////////////////////
@@ -212,7 +233,8 @@ Task("Package")
     .IsDependentOn("Create-NuGet-Packages");
 
 Task("Publish")
-    .IsDependentOn("Publish-Nuget");
+    .IsDependentOn("Publish-Nuget")
+	.IsDependentOn("Publish-MyGet");
 
 Task("AppVeyor")
     .IsDependentOn("Publish")

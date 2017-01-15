@@ -23,8 +23,10 @@ var isMasterBranch = System.String.Equals("master", branchName, System.StringCom
 var isTagCommit = false;
 var tagName = bool.TryParse(EnvironmentVariable("APPVEYOR_REPO_TAG"), out isTagCommit) ? (isTagCommit ? EnvironmentVariable("APPVEYOR_REPO_TAG_NAME") : string.Empty) : string.Empty;
 
+var releaseNotes = ParseReleaseNotes("./ReleaseNotes.md");
+
 var buildNumber = AppVeyor.Environment.Build.Number;
-var version = "0.1.0";
+var version = releaseNotes.Version.ToString();
 var semVersion = local ? version : (version + string.Concat("-build-", buildNumber));
 
 var buildDir = "./src/Cake.DotNetCoreEf/bin/" + configuration;
@@ -32,7 +34,7 @@ var buildTestDir = "./src/Cake.DotNetCoreEf/bin/" + configuration;
 
 var buildResultDir = "./build/v" + semVersion;
 var testResultsDir = buildResultDir + "/test-results";
-var nugetRoot = buildResultDir + "/nuget";
+var nugetRoot = buildResultDir + "/packages";
 var binDir = buildResultDir + "/bin";
 
 var solutionPath = File("./src/Cake.DotNetCoreEf.sln");
@@ -142,7 +144,7 @@ Task("Create-NuGet-Packages")
 {
     NuGetPack("./nuspec/Cake.DotNetCoreEf.nuspec", new NuGetPackSettings
     {
-        Version = version,
+        Version = (isMasterBranch || isTagCommit) ? version : semVersion,
         BasePath = binDir,
         OutputDirectory = nugetRoot,
         Symbols = false,
@@ -170,6 +172,27 @@ Task("Publish-Nuget")
     });
 });
 
+Task("Publish-MyGet")
+	.IsDependentOn("Create-NuGet-Packages")
+    .WithCriteria(() => isRunningOnAppVeyor)
+    .WithCriteria(() => !isPullRequest)
+    .WithCriteria(() => !isMasterBranch)
+    .WithCriteria(() => !isTagCommit)
+    .Does(() =>
+{
+    var apiKey = EnvironmentVariable("MYGET_API_KEY");
+	var mygetSource = EnvironmentVariable("MYGET_SOURCE");
+
+    if(string.IsNullOrEmpty(apiKey))    
+        throw new InvalidOperationException("Could not resolve MyGet API key.");
+
+    NuGetPush(nugetRoot + "/Cake.DotNetCoreEf." + semVersion + ".nupkg", new NuGetPushSettings
+    {
+        ApiKey = apiKey,
+        Source = mygetSource
+    });
+});
+
 ///////////////////////////////////////////////////////////////////////////////
 // APPVEYOR
 ///////////////////////////////////////////////////////////////////////////////
@@ -194,6 +217,11 @@ Task("Upload-AppVeyor-Artifacts")
     .WithCriteria(() => isRunningOnAppVeyor)
     .Does(() =>
 {
+	foreach(var nupkg in GetFiles(nugetRoot + "/*.nupkg")) 
+	{
+        AppVeyor.UploadArtifact(nupkg);
+    }
+
     AppVeyor.UploadArtifact(zipPackage);
 });
 
@@ -207,7 +235,8 @@ Task("Package")
     .IsDependentOn("Create-NuGet-Packages");
 
 Task("Publish")
-    .IsDependentOn("Publish-Nuget");
+    .IsDependentOn("Publish-Nuget")
+	.IsDependentOn("Publish-MyGet");
 
 Task("AppVeyor")
     .IsDependentOn("Publish")

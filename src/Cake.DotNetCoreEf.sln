@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "meta", "meta", "{77CAC347-B
 		..\nuspec\Cake.DotNetCoreEf.nuspec = ..\nuspec\Cake.DotNetCoreEf.nuspec
 		..\LICENSE = ..\LICENSE
 		..\README.md = ..\README.md
+		..\ReleaseNotes.md = ..\ReleaseNotes.md
 	EndProjectSection
 EndProject
 Global

@@ -142,7 +142,7 @@ Task("Create-NuGet-Packages")
 {
     NuGetPack("./nuspec/Cake.DotNetCoreEf.nuspec", new NuGetPackSettings
     {
-        Version = version,
+        Version = semVersion,
         BasePath = binDir,
         OutputDirectory = nugetRoot,
         Symbols = false,
@@ -184,7 +184,7 @@ Task("Publish-MyGet")
     if(string.IsNullOrEmpty(apiKey))    
         throw new InvalidOperationException("Could not resolve MyGet API key.");
 
-    NuGetPush(nugetRoot + "/Cake.DotNetCoreEf." + version + ".nupkg", new NuGetPushSettings
+    NuGetPush(nugetRoot + "/Cake.DotNetCoreEf." + semVersion + ".nupkg", new NuGetPushSettings
     {
         ApiKey = apiKey,
         Source = mygetSource

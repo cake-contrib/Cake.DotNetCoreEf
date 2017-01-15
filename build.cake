@@ -13,6 +13,7 @@ var appName = "Cake.DotNetCoreEf";
 //////////////////////////////////////////////////////////////////////
 // VARIABLES
 //////////////////////////////////////////////////////////////////////
+var artifacts = MakeAbsolute(Directory(Argument("artifactPath", "./artifacts")));
 var local = BuildSystem.IsLocalBuild;
 var isRunningOnAppVeyor = AppVeyor.IsRunningOnAppVeyor;
 var isPullRequest = AppVeyor.Environment.PullRequest.IsPullRequest;
@@ -32,7 +33,7 @@ var buildTestDir = "./src/Cake.DotNetCoreEf/bin/" + configuration;
 
 var buildResultDir = "./build/v" + semVersion;
 var testResultsDir = buildResultDir + "/test-results";
-var nugetRoot = buildResultDir + "/nuget";
+var nugetRoot = buildResultDir + "/packages";
 var binDir = buildResultDir + "/bin";
 
 var solutionPath = File("./src/Cake.DotNetCoreEf.sln");
@@ -194,6 +195,11 @@ Task("Upload-AppVeyor-Artifacts")
     .WithCriteria(() => isRunningOnAppVeyor)
     .Does(() =>
 {
+	foreach(var nupkg in GetFiles(artifacts +"/packages/*.nupkg")) 
+	{
+        AppVeyor.UploadArtifact(nupkg);
+    }
+
     AppVeyor.UploadArtifact(zipPackage);
 });
 

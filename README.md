@@ -27,4 +27,4 @@ or nuget reference:
 
 Copyright (c) 2017 Cake Contributions Organization  
 
-Cake.MsDeploy is provided as-is under the MIT license. For more information see [LICENSE](https://github.com/cake-contrib/Cake.MsDeploy/blob/master/LICENSE).
+Cake.DotNetCoreEf is provided as-is under the MIT license. For more information see [LICENSE](https://github.com/cake-contrib/Cake.DotNetCoreEf/blob/master/LICENSE).

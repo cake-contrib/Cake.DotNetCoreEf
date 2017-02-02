@@ -1,8 +1,32 @@
-# Initalize
+#---------------------------------#
+#  Initialization                 #
+#---------------------------------#
 init:
   - git config --global core.autocrlf true
 
+#---------------------------------#
+#  Build Script                   #
+#---------------------------------#
 build_script:
-  - cmd: powershell -NoProfile -ExecutionPolicy unrestricted -Command .\build.ps1 -Target "appveyor"
+  - ps: .\build.ps1 -Target AppVeyor
 
-test: on
+# Tests
+test: off
+
+#---------------------------------#
+#        Branches to build        #
+#---------------------------------#
+branches:
+  # Whitelist
+  only:
+    - develop
+    - master
+    - /release/.*/
+    - /hotfix/.*/
+
+#---------------------------------#
+#  Build Cache                    #
+#---------------------------------#
+cache:
+- Source\packages -> Source\**\packages.config
+- tools -> setup.cake

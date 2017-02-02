@@ -19,6 +19,6 @@
    <files>
       <file src="Cake.DotNetCoreEf.dll" target="lib/net45" />
       <file src="Cake.DotNetCoreEf.xml" target="lib/net45" />
-      <file src="LICENSE" />
+      <file src="Cake.DotNetCoreEf.pdb" target="lib/net45" />
    </files>
 </package>

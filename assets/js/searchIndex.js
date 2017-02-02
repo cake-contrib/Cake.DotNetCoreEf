@@ -34,30 +34,14 @@ var searchModule = function() {
 
     a({
         id:0,
-        title:"DotNetCoreEfTool",
-        content:"DotNetCoreEfTool",
+        title:"DotNetCoreEfDatabaseUpdateSettings",
+        content:"DotNetCoreEfDatabaseUpdateSettings",
         description:'',
         tags:''
     });
 
     a({
         id:1,
-        title:"DotNetCoreEfDatabaseDropSettings",
-        content:"DotNetCoreEfDatabaseDropSettings",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:2,
-        title:"DotNetCoreEfDatabaseUpdater",
-        content:"DotNetCoreEfDatabaseUpdater",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:3,
         title:"DotNetCoreEfDatabaseDropper",
         content:"DotNetCoreEfDatabaseDropper",
         description:'',
@@ -65,15 +49,23 @@ var searchModule = function() {
     });
 
     a({
-        id:4,
-        title:"DotNetCoreEfAliases",
-        content:"DotNetCoreEfAliases",
+        id:2,
+        title:"DotNetCoreEfTool",
+        content:"DotNetCoreEfTool",
         description:'',
         tags:''
     });
 
     a({
-        id:5,
+        id:3,
+        title:"DotNetCoreEfDatabaseDropSettings",
+        content:"DotNetCoreEfDatabaseDropSettings",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:4,
         title:"DotNetCoreEfSettings",
         content:"DotNetCoreEfSettings",
         description:'',
@@ -81,11 +73,31 @@ var searchModule = function() {
     });
 
     a({
-        id:6,
-        title:"DotNetCoreEfDatabaseUpdateSettings",
-        content:"DotNetCoreEfDatabaseUpdateSettings",
+        id:5,
+        title:"DotNetCoreEfAliases",
+        content:"DotNetCoreEfAliases",
         description:'',
         tags:''
+    });
+
+    a({
+        id:6,
+        title:"DotNetCoreEfDatabaseUpdater",
+        content:"DotNetCoreEfDatabaseUpdater",
+        description:'',
+        tags:''
+    });
+
+    y({
+        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Database/DotNetCoreEfDatabaseUpdateSettings',
+        title:"DotNetCoreEfDatabaseUpdateSettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Database/DotNetCoreEfDatabaseDropper',
+        title:"DotNetCoreEfDatabaseDropper",
+        description:""
     });
 
     y({
@@ -101,14 +113,8 @@ var searchModule = function() {
     });
 
     y({
-        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Database/DotNetCoreEfDatabaseUpdater',
-        title:"DotNetCoreEfDatabaseUpdater",
-        description:""
-    });
-
-    y({
-        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Database/DotNetCoreEfDatabaseDropper',
-        title:"DotNetCoreEfDatabaseDropper",
+        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf/DotNetCoreEfSettings',
+        title:"DotNetCoreEfSettings",
         description:""
     });
 
@@ -119,14 +125,8 @@ var searchModule = function() {
     });
 
     y({
-        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf/DotNetCoreEfSettings',
-        title:"DotNetCoreEfSettings",
-        description:""
-    });
-
-    y({
-        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Database/DotNetCoreEfDatabaseUpdateSettings',
-        title:"DotNetCoreEfDatabaseUpdateSettings",
+        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Database/DotNetCoreEfDatabaseUpdater',
+        title:"DotNetCoreEfDatabaseUpdater",
         description:""
     });
 

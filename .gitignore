@@ -234,6 +234,7 @@ FakesAssemblies/
 
 # Build
 build/
+BuildArtifacts/
 
 # Visual Studio LightSwitch build output
 **/*.HTMLClient/GeneratedArtifacts

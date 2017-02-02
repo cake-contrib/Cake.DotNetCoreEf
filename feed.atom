@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<link rel="self" href="http://cake-contrib.github.io/Cake.DotNetCoreEf" />
+	<id>http://cake-contrib.github.io/Cake.DotNetCoreEf</id>
+	<title />
+	<rights>2017</rights>
+	<updated>2017-02-02T21:05:00Z</updated>
+	<entry>
+		<author>
+			<name>gep13</name>
+		</author>
+		<link href="http://cake-contrib.github.io/Cake.DotNetCoreEf/blog/new-release-0.2.0" />
+		<id>http://cake-contrib.github.io/Cake.DotNetCoreEf/blog/new-release-0.2.0</id>
+		<title>New Release - 0.2.0</title>
+		<updated>2017-02-02T00:00:00Z</updated>
+		<summary>&lt;p&gt;Welcome to the first release of the Cake.DotNetCoreEf addin that is making use of the Cake.Recipe package.  This is a collection of build scripts, that aims to provide a consistent set of build steps, across a number of different repositories.&lt;/p&gt;</summary>
+	</entry>
+</feed>

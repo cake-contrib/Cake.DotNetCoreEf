@@ -90,7 +90,7 @@
             </code>
             </example>
         </member>
-        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfDatabaseDrop(Cake.Core.ICakeContext,System.String,Cake.Core.IO.ProcessArgumentBuilder)">
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfDatabaseDrop(Cake.Core.ICakeContext,System.String,Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropSettings)">
             <summary>
             Drop the database with path and arguments.
             </summary>
@@ -99,7 +99,12 @@
             <param name="arguments">The arguments.</param>
             <example>
             <code>
-                DotNetCoreEfDatabaseDrop("./src/Project", "--args");
+                var settings = new DotNetCoreEfDatabaseDropSettings
+                {
+                    Context = SchoolContext
+                };
+                
+                DotNetCoreEfDatabaseDrop("./src/Project", settings);
             </code>
             </example>
         </member>
@@ -134,7 +139,7 @@
             </code>
             </example>
         </member>
-        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfDatabaseUpdate(Cake.Core.ICakeContext,System.String,Cake.Core.IO.ProcessArgumentBuilder)">
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfDatabaseUpdate(Cake.Core.ICakeContext,System.String,Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseUpdateSettings)">
             <summary>
             Update the database with project and arguments.
             </summary>
@@ -143,7 +148,12 @@
             <param name="arguments">The arguments.</param>
             <example>
             <code>
-                DotNetCoreEfDatabaseUpdate("./src/Project", "--args");
+                var settings = new DotNetCoreEfDatabaseUpdateSettings
+                {
+                    Context = SchoolContext
+                };
+                
+                DotNetCoreEfDatabaseUpdate("./src/Project", settings);
             </code>
             </example>
         </member>
@@ -173,13 +183,13 @@
             <typeparam name="TSettings"></typeparam>
         </member>
         <member name="M:Cake.DotNetCoreEf.DotNetCoreEfTool`1.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="fileSystem"></param>
-            <param name="environment"></param>
-            <param name="processRunner"></param>
-            <param name="tools"></param>
+             </summary>
+             <param name="fileSystem"></param>
+             <param name="environment"></param>
+             <param name="processRunner"></param>
+             <param name="tools"></param>
         </member>
         <member name="M:Cake.DotNetCoreEf.DotNetCoreEfTool`1.CreateArgumentBuilder(`0)">
             <summary>

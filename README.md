@@ -1,23 +1,35 @@
 # Cake.DotNetCoreEf
 
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://cake-contrib.mit-license.org)
+
 Cake.DotNetCoreEf is an Addin that extends [Cake](http://cakebuild.net/) for executing commands with the dotnet ef command line interface (CLI). To use this addin the dotnet CLI must be installed [DotNet CLI](https://www.microsoft.com/net/core#windowscmd).
 
-## Build status 
+## Information
 
-[![Build status](https://ci.appveyor.com/api/projects/status/fyk64dwsp69pis7i?retina=true)](https://ci.appveyor.com/project/cakecontrib/cake-dotnetcoreef)
+||Stable|Pre-release|
+|:--:|:--:|:--:|
+|GitHub Release|-|[![GitHub release](https://img.shields.io/github/release/cake-contrib/Cake.DotNetCoreEf.svg)](https://github.com/cake-contrib/Cake.DotNetCoreEf/releases/latest)|
+|NuGet|[![NuGet](https://img.shields.io/nuget/v/Cake.DotNetCoreEf.svg)](https://www.nuget.org/packages/Cake.DotNetCoreEf)|[![NuGet](https://img.shields.io/nuget/vpre/Cake.DotNetCoreEf.svg)](https://www.nuget.org/packages/Cake.DotNetCoreEf)|
 
-## Referencing
+## Build status
 
-You can reference Cake.DotNetCoreEf in your build script as a cake addin:
-```cake
-#addin "Cake.DotNetCoreEf"
-```  
+|Develop|Master|
+|:--:|:--:|
+|[![Build status](https://ci.appveyor.com/api/projects/status/fyk64dwsp69pis7i/branch/develop?svg=true)](https://ci.appveyor.com/project/cakecontrib/cake-dotnetcoreef/branch/develop)|[![Build status](https://ci.appveyor.com/api/projects/status/fyk64dwsp69pis7i/branch/master?svg=true)](https://ci.appveyor.com/project/cakecontrib/cake-dotnetcoreef/branch/master)|
 
-or nuget reference:
+## Code Coverage
 
-```cake
-#addin "nuget:https://www.nuget.org/api/v2?package=Cake.DotNetCoreEf"
-```
+[![Coverage Status](https://coveralls.io/repos/github/cake-contrib/Cake.DotNetCoreEf/badge.svg?branch=develop)](https://coveralls.io/github/cake-contrib/Cake.DotNetCoreEf?branch=develop)
+
+## Quick Links
+
+- [Documentation](https://cake-contrib.github.io/Cake.DotNetCoreEf/)
+
+## Chat Room
+
+Come join in the conversation about Cake.VsCode in our Gitter Chat Room
+
+[![Join the chat at https://gitter.im/cake-contrib/Lobby](https://badges.gitter.im/cake-contrib/Lobby.svg)](https://gitter.im/cake-contrib/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Contribution GuideLines
 
@@ -25,6 +37,6 @@ or nuget reference:
 
 ## License
 
-Copyright (c) 2017 Cake Contributions Organization  
+Copyright (c) 2017 Cake Contributions Organization
 
-Cake.DotNetCoreEf is provided as-is under the MIT license. For more information see [LICENSE](https://github.com/cake-contrib/Cake.DotNetCoreEf/blob/master/LICENSE).
+Cake.DotNetCoreEf is provided as-is under the MIT license. For more information see [LICENSE](https://github.com/cake-contrib/Cake.DotNetCoreEf/blob/develop/LICENSE).

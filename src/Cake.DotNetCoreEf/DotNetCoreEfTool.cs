@@ -17,27 +17,28 @@ namespace Cake.DotNetCoreEf
     public class DotNetCoreEfTool<TSettings> : DotNetCoreTool<TSettings> where TSettings : DotNetCoreEfSettings
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="fileSystem"></param>
         /// <param name="environment"></param>
         /// <param name="processRunner"></param>
         /// <param name="tools"></param>
         public DotNetCoreEfTool(
-            IFileSystem fileSystem, 
-            ICakeEnvironment environment, 
-            IProcessRunner processRunner, 
+            IFileSystem fileSystem,
+            ICakeEnvironment environment,
+            IProcessRunner processRunner,
             IToolLocator tools) : base(fileSystem, environment, processRunner, tools)
         {
         }
-
 
         /// <summary>
         /// Creates a <see cref="ProcessArgumentBuilder"/> and adds common commandline arguments.
         /// </summary>
         /// <param name="settings">The settings.</param>
         /// <returns>Instance of <see cref="ProcessArgumentBuilder"/>.</returns>
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
         protected ProcessArgumentBuilder CreateArgumentBuilder(TSettings settings)
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
         {
             var builder = base.CreateArgumentBuilder(settings);
 

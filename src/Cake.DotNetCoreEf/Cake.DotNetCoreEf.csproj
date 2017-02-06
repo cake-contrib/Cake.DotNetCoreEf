@@ -56,6 +56,8 @@
     </Compile>
     <Compile Include="Database\DotNetCoreEfDatabaseUpdater.cs" />
     <Compile Include="Database\DotNetCoreEfDatabaseUpdateSettings.cs" />
+    <Compile Include="Migration\DotNetCoreEfMigrationAdder.cs" />
+    <Compile Include="Migration\DotNetCoreEfMigrationAddSettings.cs" />
     <Compile Include="DotNetCoreEfAliases.cs" />
     <Compile Include="DotNetCoreEfTool.cs" />
     <Compile Include="Database\DotNetCoreEfDatabaseDropper.cs" />

@@ -17,7 +17,7 @@ namespace Cake.DotNetCoreEf.Database
         private readonly ICakeEnvironment _environment;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DotNetCoreEfDatabaseUpdater" /> class.
+        /// Initializes a new instance of the <see cref="DotNetCoreEfDatabaseUpdater" />.
         /// </summary>
         /// <param name="fileSystem">The file system.</param>
         /// <param name="environment">The environment.</param>
@@ -50,7 +50,7 @@ namespace Cake.DotNetCoreEf.Database
 
         private ProcessArgumentBuilder GetArguments(string project, ProcessArgumentBuilder arguments, DotNetCoreEfDatabaseUpdateSettings settings)
         {
-            var builder = CreateArgumentBuilder(settings);
+            ProcessArgumentBuilder builder = CreateArgumentBuilder(settings);
 
             builder.Append("ef");
             builder.Append("database");

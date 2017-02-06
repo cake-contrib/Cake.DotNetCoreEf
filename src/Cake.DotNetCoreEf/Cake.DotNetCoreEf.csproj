@@ -63,6 +63,10 @@
     <Compile Include="Database\DotNetCoreEfDatabaseDropper.cs" />
     <Compile Include="Database\DotNetCoreEfDatabaseDropSettings.cs" />
     <Compile Include="DotNetCoreEfSettings.cs" />
+    <Compile Include="Migration\DotNetCoreEfMigrationRemover.cs" />
+    <Compile Include="Migration\DotNetCoreEfMigrationRemoveSettings.cs" />
+    <Compile Include="Migration\DotNetCoreEfMigrationScripter.cs" />
+    <Compile Include="Migration\DotNetCoreEfMigrationScriptSettings.cs" />
     <Compile Include="Properties\NamespaceDoc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

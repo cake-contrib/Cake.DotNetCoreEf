@@ -26,6 +26,9 @@ namespace Cake.DotNetCoreEf.Migration
         /// </summary>
         public bool Json { get; set; }
 
+        /// <summary>
+        /// The target migration. If '0', all migrations will be reverted. If omitted, all pending migrations will be applied
+        /// </summary>
         public string Migration { get; set; }
     }
 }

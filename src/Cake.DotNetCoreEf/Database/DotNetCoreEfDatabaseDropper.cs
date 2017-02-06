@@ -56,12 +56,8 @@ namespace Cake.DotNetCoreEf.Database
             builder.Append("ef");
             builder.Append("database");
             builder.Append("drop");
-            
-            // Specific path?
-            if (project != null)
-            {
-                settings.WorkingDirectory = project;
-            }
+
+            settings.SetProject(project);
 
             if (!string.IsNullOrEmpty(settings.Context))
             {

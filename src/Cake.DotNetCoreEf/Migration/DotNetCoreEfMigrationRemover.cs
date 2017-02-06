@@ -57,12 +57,8 @@ namespace Cake.DotNetCoreEf.Migration
             builder.Append("migrations");
             builder.Append("remove");
 
-            // Specific path?
-            if (project != null)
-            {
-                settings.WorkingDirectory = project;
-            }           
-            
+            settings.SetProject(project);
+
             if (!string.IsNullOrEmpty(settings.Context))
             {
                 builder.Append("--context");

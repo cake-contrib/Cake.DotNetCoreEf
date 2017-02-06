@@ -56,12 +56,8 @@ namespace Cake.DotNetCoreEf.Database
             builder.Append("database");
             builder.Append("update");
 
-            // Specific path?
-            if (project != null)
-            {
-                settings.WorkingDirectory = project;
-            }
-                      
+            settings.SetProject(project);
+
             if (!string.IsNullOrWhiteSpace(settings.Migration))
             {
                 builder.AppendQuoted(settings.Migration);

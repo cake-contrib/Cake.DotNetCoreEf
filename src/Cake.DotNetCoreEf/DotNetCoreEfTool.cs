@@ -40,7 +40,7 @@ namespace Cake.DotNetCoreEf
         protected ProcessArgumentBuilder CreateArgumentBuilder(TSettings settings)
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
         {
-            var builder = base.CreateArgumentBuilder(settings);
+            ProcessArgumentBuilder builder = base.CreateArgumentBuilder(settings);
 
             if (settings.Help)
             {

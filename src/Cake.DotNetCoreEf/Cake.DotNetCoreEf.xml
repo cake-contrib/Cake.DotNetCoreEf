@@ -11,7 +11,7 @@
         </member>
         <member name="M:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseUpdater.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator)">
             <summary>
-            Initializes a new instance of the <see cref="T:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseUpdater" /> class.
+            Initializes a new instance of the <see cref="T:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseUpdater" />.
             </summary>
             <param name="fileSystem">The file system.</param>
             <param name="environment">The environment.</param>
@@ -20,7 +20,7 @@
         </member>
         <member name="M:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseUpdater.Update(System.String,Cake.Core.IO.ProcessArgumentBuilder,Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseUpdateSettings)">
             <summary>
-            Runs the project using the specified path with arguments and settings.
+            Update the database for the project using the specified path with arguments and settings.
             </summary>
             <param name="project">The target project path.</param>
             <param name="arguments">The arguments.</param>
@@ -57,7 +57,7 @@
         </member>
         <member name="M:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropper.Drop(System.String,Cake.Core.IO.ProcessArgumentBuilder,Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropSettings)">
             <summary>
-            Runs the project using the specified path with arguments and settings.
+            Drop the database for the project using the specified path with arguments and settings.
             </summary>
             <param name="project">The target project path.</param>
             <param name="arguments">The arguments.</param>
@@ -68,14 +68,140 @@
             Contains settings used by <see cref="T:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropper"/>
             </summary>
         </member>
-        <member name="P:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropSettings.Context">
+        <member name="P:Cake.DotNetCoreEf.DotNetCoreEfContextSettings.Context">
             <summary>
-            The DbContext to use. If omitted, the default DbContext is used
+            The DbContext to use. If omitted, the default DbContext is used.
             </summary>
         </member>
-        <member name="P:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropSettings.Force">
+        <member name="P:Cake.DotNetCoreEf.DotNetCoreEfContextSettings.Force">
             <summary>
-            Drop without confirmation
+            Removes the last migration without checking the database. If the last migration has been applied to the database, you will need to manually reverse the changes it made
+            </summary>
+        </member>
+        <member name="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationAdder">
+            <summary>
+            Support for adding migrations using .NET Core cli tooling
+            </summary>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationAdder.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationAdder" />.
+            </summary>
+            <param name="fileSystem">The file system.</param>
+            <param name="environment">The environment.</param>
+            <param name="processRunner">The process runner.</param>
+            <param name="tools">The tool locator.</param>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationAdder.Add(System.String,Cake.Core.IO.ProcessArgumentBuilder,Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationAddSettings)">
+            <summary>
+            Add a migration for the project using the specified path with arguments and settings.
+            </summary>
+            <param name="project">The target project path.</param>
+            <param name="arguments">The arguments.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationAddSettings">
+            <summary>
+            Contains settings used by <see cref="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationAdder"/>.
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationAddSettings.Context">
+            <summary>
+            The DbContext to use. If omitted, the default DbContext is used.
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationAddSettings.OutputDir">
+            <summary>
+            The directory (and sub-namespace) to use. If omitted, "Migrations" is used. Relative paths are relative the directory in which the command is executed.
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationAddSettings.Json">
+            <summary>
+            Use json output. JSON is wrapped by '//BEGIN' and '//END'
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationAddSettings.Migration">
+            <summary>
+            The target migration. If '0', all migrations will be reverted. If omitted, all pending migrations will be applied
+            </summary>
+        </member>
+        <member name="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationRemover">
+            <summary>
+            Support for removing migrations using .NET Core cli tooling
+            </summary>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationRemover.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationRemover" />.
+            </summary>
+            <param name="fileSystem">The file system.</param>
+            <param name="environment">The environment.</param>
+            <param name="processRunner">The process runner.</param>
+            <param name="tools">The tool locator.</param>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationRemover.Remove(System.String,Cake.Core.IO.ProcessArgumentBuilder,Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationRemoveSettings)">
+            <summary>
+            Remove migrations for the project using the specified path with arguments and settings.
+            </summary>
+            <param name="project">The target project path.</param>
+            <param name="arguments">The arguments.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationRemoveSettings">
+            <summary>
+            Contains settings used by <see cref="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationRemover"/>.
+            </summary>
+        </member>
+        <member name="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationScripter">
+            <summary>
+            Support for script migrations using .NET Core cli tooling
+            </summary>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationScripter.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationScripter" />.
+            </summary>
+            <param name="fileSystem">The file system.</param>
+            <param name="environment">The environment.</param>
+            <param name="processRunner">The process runner.</param>
+            <param name="tools">The tool locator.</param>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationScripter.Script(System.String,Cake.Core.IO.ProcessArgumentBuilder,Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationScriptSettings)">
+            <summary>
+            Script migrations for the project using the specified path with arguments and settings.
+            </summary>
+            <param name="project">The target project path.</param>
+            <param name="arguments">The arguments.</param>
+            <param name="settings">The settings.</param>
+        </member>
+        <member name="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationScriptSettings">
+            <summary>
+            Contains settings used by <see cref="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationScripter"/>.
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationScriptSettings.From">
+            <summary>
+            The starting migration. If omitted, '0' (the initial database) is used.
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationScriptSettings.To">
+            <summary>
+            The ending migration. If omitted, the last migration is used.
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationScriptSettings.Output">
+            <summary>
+            The file to write the script to instead of stdout.
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationScriptSettings.Idempotent">
+            <summary>
+            Generates an idempotent script that can used on a database at any migration.
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationScriptSettings.Context">
+            <summary>
+            The DbContext to use. If omitted, the default DbContext is used.
             </summary>
         </member>
         <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfDatabaseDrop(Cake.Core.ICakeContext,System.String)">
@@ -173,6 +299,153 @@
                  };
             
                  DotNetCoreEfDatabaseUpdate("./src/Project", "--args", settings);
+             </code>
+             </example>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfMigrationAdd(Cake.Core.ICakeContext,System.String)">
+            <summary>
+            Add a migration for the context.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="project">The project path.</param>
+            <example>
+            <code>
+                DotNetCoreEfMigrationAdd("./src/Project");
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfMigrationAdd(Cake.Core.ICakeContext,System.String,Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationAddSettings)">
+            <summary>
+            Add a migration for the context with project and arguments.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="project">The project path.</param>
+            <param name="arguments">The arguments.</param>
+            <example>
+            <code>
+                var settings = new DotNetCoreEfMigrationAddSettings
+                {
+                    Context = SchoolContext
+                };
+                
+                DotNetCoreEfMigrationAdd("./src/Project", settings);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfMigrationAdd(Cake.Core.ICakeContext,System.String,Cake.Core.IO.ProcessArgumentBuilder,Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationAddSettings)">
+             <summary>
+             Add a migration for the context with settings.
+             </summary>
+             <param name="context">The context.</param>
+             <param name="project">The project path.</param>
+             <param name="arguments">The arguments.</param>
+             <param name="settings">The settings.</param>
+             <example>
+             <code>
+                 var settings = new DotNetCoreEfMigrationAddSettings
+                 {
+                     Context = SchoolContext
+                 };
+            
+                 DotNetCoreEfMigrationAdd("./src/Project", "--args", settings);
+             </code>
+             </example>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfMigrationRemove(Cake.Core.ICakeContext,System.String)">
+            <summary>
+            Remove migrations for the context.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="project">The project path.</param>
+            <example>
+            <code>
+                DotNetCoreEfMigrationRemove("./src/Project");
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfMigrationRemove(Cake.Core.ICakeContext,System.String,Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationRemoveSettings)">
+            <summary>
+            Remove migrations for the context with project and arguments.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="project">The project path.</param>
+            <param name="arguments">The arguments.</param>
+            <example>
+            <code>
+                var settings = new DotNetCoreEfMigrationRemoveSettings
+                {
+                    Context = SchoolContext
+                };
+                
+                DotNetCoreEfMigrationRemove("./src/Project", settings);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfMigrationRemove(Cake.Core.ICakeContext,System.String,Cake.Core.IO.ProcessArgumentBuilder,Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationRemoveSettings)">
+             <summary>
+             Remove migrations for the context with settings.
+             </summary>
+             <param name="context">The context.</param>
+             <param name="project">The project path.</param>
+             <param name="arguments">The arguments.</param>
+             <param name="settings">The settings.</param>
+             <example>
+             <code>
+                 var settings = new DotNetCoreEfMigrationRemoveSettings
+                 {
+                     Context = SchoolContext
+                 };
+            
+                 DotNetCoreEfMigrationRemove("./src/Project", "--args", settings);
+             </code>
+             </example>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfMigrationScript(Cake.Core.ICakeContext,System.String)">
+            <summary>
+            Script migration for the context.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="project">The project path.</param>
+            <example>
+            <code>
+                DotNetCoreEfMigrationScript("./src/Project");
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfMigrationScript(Cake.Core.ICakeContext,System.String,Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationScriptSettings)">
+            <summary>
+            Script migration for the context with project and arguments.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="project">The project path.</param>
+            <param name="arguments">The arguments.</param>
+            <example>
+            <code>
+                var settings = new DotNetCoreEfMigrationScriptSettings
+                {
+                    Context = SchoolContext
+                };
+                
+                DotNetCoreEfMigrationScript("./src/Project", settings);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.DotNetCoreEf.DotNetCoreEfAliases.DotNetCoreEfMigrationScript(Cake.Core.ICakeContext,System.String,Cake.Core.IO.ProcessArgumentBuilder,Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationScriptSettings)">
+             <summary>
+             Script migration for the context with settings.
+             </summary>
+             <param name="context">The context.</param>
+             <param name="project">The project path.</param>
+             <param name="arguments">The arguments.</param>
+             <param name="settings">The settings.</param>
+             <example>
+             <code>
+                 var settings = new DotNetCoreEfMigrationScriptSettings
+                 {
+                     Context = SchoolContext
+                 };
+            
+                 DotNetCoreEfMigrationScript("./src/Project", "--args", settings);
              </code>
              </example>
         </member>

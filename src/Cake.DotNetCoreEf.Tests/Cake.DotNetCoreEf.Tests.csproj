@@ -85,9 +85,15 @@
     <Compile Include="Fixtures\Database\DotNetCoreEfDatabaseDropperFixture.cs" />
     <Compile Include="Fixtures\Database\DotNetCoreEfDatabaseUpdaterFixture.cs" />
     <Compile Include="Fixtures\DotNetCoreEfFixture.cs" />
+    <Compile Include="Fixtures\Migration\DotNetCoreEfMigrationScripterFixture.cs" />
+    <Compile Include="Fixtures\Migration\DotNetCoreEfMigrationRemoverFixture.cs" />
+    <Compile Include="Fixtures\Migration\DotNetCoreEfMigrationAdderFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Unit\Database\DotNetCoreEfDatabaseUpdaterTests.cs" />
     <Compile Include="Unit\Database\DotNetCoreEfDatabaseDropperTests.cs" />
+    <Compile Include="Unit\Migration\DotNetCoreEfMigrationRemoverTests.cs" />
+    <Compile Include="Unit\Migration\DotNetCoreEfMigrationScripterTests.cs" />
+    <Compile Include="Unit\Migration\DotNetCoreEfMigrationAdderTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

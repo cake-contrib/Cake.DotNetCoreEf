@@ -21,5 +21,15 @@ namespace Cake.DotNetCoreEf
         /// The environment to use. If omitted, "Development" is used.
         /// </summary>
         public string Environment { get; set; }
+
+        public void SetProject(string project)
+        {
+            if (string.IsNullOrWhiteSpace(project))
+            {
+                return;   
+            }
+
+            this.WorkingDirectory = project;
+        }
     }
 }

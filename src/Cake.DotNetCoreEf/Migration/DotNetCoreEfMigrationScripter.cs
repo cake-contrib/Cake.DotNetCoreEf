@@ -7,40 +7,41 @@ using Cake.Core;
 using Cake.Core.IO;
 using Cake.Core.Tooling;
 
-namespace Cake.DotNetCoreEf.Database
+namespace Cake.DotNetCoreEf.Migration
 {
     /// <summary>
-    /// Support for updating the database using .NET Core cli tooling
+    /// Support for script migrations using .NET Core cli tooling
     /// </summary>
-    public class DotNetCoreEfDatabaseUpdater : DotNetCoreEfTool<DotNetCoreEfDatabaseUpdateSettings>
+    public class DotNetCoreEfMigrationScripter : DotNetCoreEfTool<DotNetCoreEfMigrationScriptSettings>
     {
         private readonly ICakeEnvironment _environment;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DotNetCoreEfDatabaseUpdater" />.
+        /// Initializes a new instance of the <see cref="DotNetCoreEfMigrationScripter" />.
         /// </summary>
         /// <param name="fileSystem">The file system.</param>
         /// <param name="environment">The environment.</param>
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tool locator.</param>
-        public DotNetCoreEfDatabaseUpdater(
+        public DotNetCoreEfMigrationScripter(
             IFileSystem fileSystem, 
             ICakeEnvironment environment, 
             IProcessRunner processRunner, 
-            IToolLocator tools) : base(fileSystem, environment, processRunner, tools)
+            IToolLocator tools) 
+            : base(fileSystem, environment, processRunner, tools)
         {
             this._environment = environment;
         }
 
         /// <summary>
-        /// Update the database for the project using the specified path with arguments and settings.
+        /// Script migrations for the project using the specified path with arguments and settings.
         /// </summary>
         /// <param name="project">The target project path.</param>
         /// <param name="arguments">The arguments.</param>
         /// <param name="settings">The settings.</param>
-        public void Update(string project, ProcessArgumentBuilder arguments, DotNetCoreEfDatabaseUpdateSettings settings)
+        public void Script(string project, ProcessArgumentBuilder arguments, DotNetCoreEfMigrationScriptSettings settings)
         {
-            if (settings == null)
+            if(settings == null)
             {
                 throw new ArgumentNullException(nameof(settings));
             }
@@ -48,25 +49,41 @@ namespace Cake.DotNetCoreEf.Database
             Run(settings, GetArguments(project, arguments, settings));
         }
 
-        private ProcessArgumentBuilder GetArguments(string project, ProcessArgumentBuilder arguments, DotNetCoreEfDatabaseUpdateSettings settings)
+        private ProcessArgumentBuilder GetArguments(string project, ProcessArgumentBuilder arguments, DotNetCoreEfMigrationScriptSettings settings)
         {
             ProcessArgumentBuilder builder = CreateArgumentBuilder(settings);
 
             builder.Append("ef");
-            builder.Append("database");
-            builder.Append("update");
+            builder.Append("migrations");
+            builder.Append("script");
 
             settings.SetProject(project);
 
-            if (!string.IsNullOrWhiteSpace(settings.Migration))
+            if (!string.IsNullOrWhiteSpace(settings.From))
             {
-                builder.AppendQuoted(settings.Migration);
+                builder.AppendQuoted(settings.From);
+            }
+
+            if (!string.IsNullOrWhiteSpace(settings.To))
+            {
+                builder.AppendQuoted(settings.To);
+            }
+
+            if (!string.IsNullOrWhiteSpace(settings.Output))
+            {
+                builder.Append("--output");
+                builder.AppendQuoted(settings.Output);
             }
 
             if (!string.IsNullOrEmpty(settings.Context))
             {
                 builder.Append("--context");
                 builder.AppendQuoted(settings.Context);
+            }
+
+            if (settings.Idempotent)
+            {
+                builder.Append("--idempotent");
             }
 
             // Arguments

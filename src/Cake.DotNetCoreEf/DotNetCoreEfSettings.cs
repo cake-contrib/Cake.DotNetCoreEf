@@ -24,7 +24,7 @@ namespace Cake.DotNetCoreEf
 
         public void SetProject(string project)
         {
-            if (!string.IsNullOrWhiteSpace(project))
+            if (string.IsNullOrWhiteSpace(project))
             {
                 return;   
             }

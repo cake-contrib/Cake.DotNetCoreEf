@@ -68,14 +68,14 @@
             Contains settings used by <see cref="T:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropper"/>
             </summary>
         </member>
-        <member name="P:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropSettings.Context">
+        <member name="P:Cake.DotNetCoreEf.DotNetCoreEfContextSettings.Context">
             <summary>
-            The DbContext to use. If omitted, the default DbContext is used
+            The DbContext to use. If omitted, the default DbContext is used.
             </summary>
         </member>
-        <member name="P:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropSettings.Force">
+        <member name="P:Cake.DotNetCoreEf.DotNetCoreEfContextSettings.Force">
             <summary>
-            Drop without confirmation
+            Removes the last migration without checking the database. If the last migration has been applied to the database, you will need to manually reverse the changes it made
             </summary>
         </member>
         <member name="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationAdder">
@@ -150,16 +150,6 @@
         <member name="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationRemoveSettings">
             <summary>
             Contains settings used by <see cref="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationRemover"/>.
-            </summary>
-        </member>
-        <member name="P:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationRemoveSettings.Context">
-            <summary>
-            The DbContext to use. If omitted, the default DbContext is used.
-            </summary>
-        </member>
-        <member name="P:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationRemoveSettings.Force">
-            <summary>
-            Removes the last migration without checking the database. If the last migration has been applied to the database, you will need to manually reverse the changes it made
             </summary>
         </member>
         <member name="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationScripter">

@@ -63,7 +63,7 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Migration
             var result = fixture.Run();
 
             // Then
-            Assert.Equal("ef migrations add", result.Args);
+            Assert.Equal("ef migrations script", result.Args);
         }
 
         [Fact]

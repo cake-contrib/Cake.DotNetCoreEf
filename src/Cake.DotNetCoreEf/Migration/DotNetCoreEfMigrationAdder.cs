@@ -9,6 +9,9 @@ using Cake.Core.Tooling;
 
 namespace Cake.DotNetCoreEf.Migration
 {
+    /// <summary>
+    /// Support for adding migrations using .NET Core cli tooling
+    /// </summary>
     public class DotNetCoreEfMigrationAdder : DotNetCoreEfTool<DotNetCoreEfMigrationAddSettings>
     {
         private readonly ICakeEnvironment _environment;
@@ -30,6 +33,12 @@ namespace Cake.DotNetCoreEf.Migration
             this._environment = environment;
         }
 
+        /// <summary>
+        /// Add a migration for the project using the specified path with arguments and settings.
+        /// </summary>
+        /// <param name="project">The target project path.</param>
+        /// <param name="arguments">The arguments.</param>
+        /// <param name="settings">The settings.</param>
         public void Add(string project, ProcessArgumentBuilder arguments, DotNetCoreEfMigrationAddSettings settings)
         {
             if(settings == null)

@@ -9,10 +9,20 @@ using Cake.Core.Tooling;
 
 namespace Cake.DotNetCoreEf.Migration
 {
+    /// <summary>
+    /// Support for script migrations using .NET Core cli tooling
+    /// </summary>
     public class DotNetCoreEfMigrationScripter : DotNetCoreEfTool<DotNetCoreEfMigrationScriptSettings>
     {
         private readonly ICakeEnvironment _environment;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DotNetCoreEfMigrationScripter" />.
+        /// </summary>
+        /// <param name="fileSystem">The file system.</param>
+        /// <param name="environment">The environment.</param>
+        /// <param name="processRunner">The process runner.</param>
+        /// <param name="tools">The tool locator.</param>
         public DotNetCoreEfMigrationScripter(
             IFileSystem fileSystem, 
             ICakeEnvironment environment, 
@@ -23,6 +33,12 @@ namespace Cake.DotNetCoreEf.Migration
             this._environment = environment;
         }
 
+        /// <summary>
+        /// Script migrations for the project using the specified path with arguments and settings.
+        /// </summary>
+        /// <param name="project">The target project path.</param>
+        /// <param name="arguments">The arguments.</param>
+        /// <param name="settings">The settings.</param>
         public void Script(string project, ProcessArgumentBuilder arguments, DotNetCoreEfMigrationScriptSettings settings)
         {
             if(settings == null)

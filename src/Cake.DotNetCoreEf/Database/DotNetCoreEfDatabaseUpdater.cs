@@ -33,7 +33,7 @@ namespace Cake.DotNetCoreEf.Database
         }
 
         /// <summary>
-        /// Runs the project using the specified path with arguments and settings.
+        /// Update the database for the project using the specified path with arguments and settings.
         /// </summary>
         /// <param name="project">The target project path.</param>
         /// <param name="arguments">The arguments.</param>

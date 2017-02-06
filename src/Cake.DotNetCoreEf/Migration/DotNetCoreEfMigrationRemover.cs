@@ -10,12 +10,19 @@ using Cake.Core.Tooling;
 namespace Cake.DotNetCoreEf.Migration
 {
     /// <summary>
-    /// Contains settings used by <see cref="DotNetCoreEfMigrationRemover"/>.
+    /// Support for removing migrations using .NET Core cli tooling
     /// </summary>
     public class DotNetCoreEfMigrationRemover : DotNetCoreEfTool<DotNetCoreEfMigrationRemoveSettings>
     {
         private readonly ICakeEnvironment _environment;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DotNetCoreEfMigrationRemover" />.
+        /// </summary>
+        /// <param name="fileSystem">The file system.</param>
+        /// <param name="environment">The environment.</param>
+        /// <param name="processRunner">The process runner.</param>
+        /// <param name="tools">The tool locator.</param>
         public DotNetCoreEfMigrationRemover(
             IFileSystem fileSystem, 
             ICakeEnvironment environment, 
@@ -26,6 +33,12 @@ namespace Cake.DotNetCoreEf.Migration
             this._environment = environment;
         }
 
+        /// <summary>
+        /// Remove migrations for the project using the specified path with arguments and settings.
+        /// </summary>
+        /// <param name="project">The target project path.</param>
+        /// <param name="arguments">The arguments.</param>
+        /// <param name="settings">The settings.</param>
         public void Remove(string project, ProcessArgumentBuilder arguments, DotNetCoreEfMigrationRemoveSettings settings)
         {
             if (settings == null)

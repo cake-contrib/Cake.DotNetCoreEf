@@ -34,54 +34,6 @@ var searchModule = function() {
 
     a({
         id:0,
-        title:"ProcessArgumentBuilderExtensions",
-        content:"ProcessArgumentBuilderExtensions",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:1,
-        title:"DotNetCoreEfDatabaseUpdateSettings",
-        content:"DotNetCoreEfDatabaseUpdateSettings",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:2,
-        title:"DotNetCoreEfDatabaseDropper",
-        content:"DotNetCoreEfDatabaseDropper",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:3,
-        title:"DotNetCoreEfMigrationRemover",
-        content:"DotNetCoreEfMigrationRemover",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:4,
-        title:"DotNetCoreEfAliases",
-        content:"DotNetCoreEfAliases",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:5,
-        title:"DotNetCoreEfMigrationScriptSettings",
-        content:"DotNetCoreEfMigrationScriptSettings",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:6,
         title:"DotNetCoreEfMigrationAddSettings",
         content:"DotNetCoreEfMigrationAddSettings",
         description:'',
@@ -89,47 +41,39 @@ var searchModule = function() {
     });
 
     a({
-        id:7,
-        title:"DotNetCoreEfDatabaseUpdater",
-        content:"DotNetCoreEfDatabaseUpdater",
+        id:1,
+        title:"DotNetCoreEfMigrationRemover",
+        content:"DotNetCoreEfMigrationRemover",
         description:'',
         tags:''
     });
 
     a({
-        id:8,
-        title:"DotNetCoreEfContextSettings",
-        content:"DotNetCoreEfContextSettings",
+        id:2,
+        title:"ProcessArgumentBuilderExtensions",
+        content:"ProcessArgumentBuilderExtensions",
         description:'',
         tags:''
     });
 
     a({
-        id:9,
-        title:"DotNetCoreEfMigrationRemoveSettings",
-        content:"DotNetCoreEfMigrationRemoveSettings",
+        id:3,
+        title:"DotNetCoreEfDatabaseDropper",
+        content:"DotNetCoreEfDatabaseDropper",
         description:'',
         tags:''
     });
 
     a({
-        id:10,
-        title:"DotNetCoreEfSettings",
-        content:"DotNetCoreEfSettings",
+        id:4,
+        title:"DotNetCoreEfDatabaseUpdateSettings",
+        content:"DotNetCoreEfDatabaseUpdateSettings",
         description:'',
         tags:''
     });
 
     a({
-        id:11,
-        title:"DotNetCoreEfMigrationScripter",
-        content:"DotNetCoreEfMigrationScripter",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:12,
+        id:5,
         title:"DotNetCoreEfTool",
         content:"DotNetCoreEfTool",
         description:'',
@@ -137,9 +81,65 @@ var searchModule = function() {
     });
 
     a({
-        id:13,
+        id:6,
+        title:"DotNetCoreEfMigrationRemoveSettings",
+        content:"DotNetCoreEfMigrationRemoveSettings",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:7,
         title:"DotNetCoreEfMigrationAdder",
         content:"DotNetCoreEfMigrationAdder",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:8,
+        title:"DotNetCoreEfMigrationScripter",
+        content:"DotNetCoreEfMigrationScripter",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:9,
+        title:"DotNetCoreEfAliases",
+        content:"DotNetCoreEfAliases",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:10,
+        title:"DotNetCoreEfMigrationScriptSettings",
+        content:"DotNetCoreEfMigrationScriptSettings",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:11,
+        title:"DotNetCoreEfDatabaseUpdater",
+        content:"DotNetCoreEfDatabaseUpdater",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:12,
+        title:"DotNetCoreEfContextSettings",
+        content:"DotNetCoreEfContextSettings",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:13,
+        title:"DotNetCoreEfSettings",
+        content:"DotNetCoreEfSettings",
         description:'',
         tags:''
     });
@@ -153,14 +153,20 @@ var searchModule = function() {
     });
 
     y({
-        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf/ProcessArgumentBuilderExtensions',
-        title:"ProcessArgumentBuilderExtensions",
+        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationAddSettings',
+        title:"DotNetCoreEfMigrationAddSettings",
         description:""
     });
 
     y({
-        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Database/DotNetCoreEfDatabaseUpdateSettings',
-        title:"DotNetCoreEfDatabaseUpdateSettings",
+        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationRemover',
+        title:"DotNetCoreEfMigrationRemover",
+        description:""
+    });
+
+    y({
+        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf/ProcessArgumentBuilderExtensions',
+        title:"ProcessArgumentBuilderExtensions",
         description:""
     });
 
@@ -171,8 +177,32 @@ var searchModule = function() {
     });
 
     y({
-        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationRemover',
-        title:"DotNetCoreEfMigrationRemover",
+        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Database/DotNetCoreEfDatabaseUpdateSettings',
+        title:"DotNetCoreEfDatabaseUpdateSettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf/DotNetCoreEfTool_1',
+        title:"DotNetCoreEfTool<TSettings>",
+        description:""
+    });
+
+    y({
+        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationRemoveSettings',
+        title:"DotNetCoreEfMigrationRemoveSettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationAdder',
+        title:"DotNetCoreEfMigrationAdder",
+        description:""
+    });
+
+    y({
+        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationScripter',
+        title:"DotNetCoreEfMigrationScripter",
         description:""
     });
 
@@ -189,12 +219,6 @@ var searchModule = function() {
     });
 
     y({
-        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationAddSettings',
-        title:"DotNetCoreEfMigrationAddSettings",
-        description:""
-    });
-
-    y({
         url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Database/DotNetCoreEfDatabaseUpdater',
         title:"DotNetCoreEfDatabaseUpdater",
         description:""
@@ -207,32 +231,8 @@ var searchModule = function() {
     });
 
     y({
-        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationRemoveSettings',
-        title:"DotNetCoreEfMigrationRemoveSettings",
-        description:""
-    });
-
-    y({
         url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf/DotNetCoreEfSettings',
         title:"DotNetCoreEfSettings",
-        description:""
-    });
-
-    y({
-        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationScripter',
-        title:"DotNetCoreEfMigrationScripter",
-        description:""
-    });
-
-    y({
-        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf/DotNetCoreEfTool_1',
-        title:"DotNetCoreEfTool<TSettings>",
-        description:""
-    });
-
-    y({
-        url:'/Cake.DotNetCoreEf/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationAdder',
-        title:"DotNetCoreEfMigrationAdder",
         description:""
     });
 

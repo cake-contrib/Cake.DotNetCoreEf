@@ -56,6 +56,7 @@
     </Compile>
     <Compile Include="Database\DotNetCoreEfDatabaseUpdater.cs" />
     <Compile Include="Database\DotNetCoreEfDatabaseUpdateSettings.cs" />
+    <Compile Include="DotNetCoreEfContextSettings.cs" />
     <Compile Include="Migration\DotNetCoreEfMigrationAdder.cs" />
     <Compile Include="Migration\DotNetCoreEfMigrationAddSettings.cs" />
     <Compile Include="DotNetCoreEfAliases.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Migration\DotNetCoreEfMigrationRemoveSettings.cs" />
     <Compile Include="Migration\DotNetCoreEfMigrationScripter.cs" />
     <Compile Include="Migration\DotNetCoreEfMigrationScriptSettings.cs" />
+    <Compile Include="ProcessArgumentBuilderExtensions.cs" />
     <Compile Include="Properties\NamespaceDoc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

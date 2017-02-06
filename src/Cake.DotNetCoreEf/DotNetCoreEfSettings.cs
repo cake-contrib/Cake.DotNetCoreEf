@@ -26,8 +26,10 @@ namespace Cake.DotNetCoreEf
         {
             if (!string.IsNullOrWhiteSpace(project))
             {
-                this.WorkingDirectory = project;
+                return;   
             }
+
+            this.WorkingDirectory = project;
         }
     }
 }

@@ -57,24 +57,7 @@ namespace Cake.DotNetCoreEf.Database
             builder.Append("database");
             builder.Append("drop");
 
-            settings.SetProject(project);
-
-            if (!string.IsNullOrEmpty(settings.Context))
-            {
-                builder.Append("--context");
-                builder.AppendQuoted(settings.Context);
-            }
-
-            if (settings.Force)
-            {
-                builder.Append("--force");
-            }           
-
-            // Arguments
-            if (!arguments.IsNullOrEmpty())
-            {
-                arguments.CopyTo(builder);
-            }
+            builder.SetContextSettings(arguments, project, settings);
 
             return builder;
         }

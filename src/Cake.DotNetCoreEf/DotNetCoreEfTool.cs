@@ -53,6 +53,36 @@ namespace Cake.DotNetCoreEf
                 builder.AppendQuoted(settings.Environment);
             }
 
+            if (!string.IsNullOrWhiteSpace(settings.StartupProject))
+            {
+                builder.Append("--startup-project");
+                builder.AppendQuoted(settings.StartupProject);
+            }
+
+            if (!string.IsNullOrWhiteSpace(settings.Project))
+            {
+                builder.Append("--project");
+                builder.AppendQuoted(settings.Project);
+            }
+
+            if (!string.IsNullOrWhiteSpace(settings.Configuration))
+            {
+                builder.Append("--configuration");
+                builder.AppendQuoted(settings.Configuration);
+            }
+            if (!string.IsNullOrWhiteSpace(settings.Framework))
+            {
+                builder.Append("--framework");
+                builder.AppendQuoted(settings.Framework);
+            }
+
+            if (!string.IsNullOrWhiteSpace(settings.MsBuildProjectExtensionsPath))
+            {
+                builder.Append("--msbuildprojectextensionspath");
+                builder.AppendQuoted(settings.MsBuildProjectExtensionsPath);
+            }
+
+
             return builder;
         }
     }

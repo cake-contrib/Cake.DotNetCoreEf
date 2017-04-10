@@ -10,6 +10,13 @@ namespace Cake.DotNetCoreEf
 {
     public static class ProcessArgumentBuilderExtensions
     { 
+        public static void AppendBuilder(this ProcessArgumentBuilder builder, ProcessArgumentBuilder arguments)
+        {
+            foreach (IProcessArgument argument in builder)
+            {
+                arguments.Append(argument);
+            }
+        }
 
         public static void SetContextSettings(this ProcessArgumentBuilder builder, ProcessArgumentBuilder arguments, string project, DotNetCoreEfContextSettings settings)
         {

@@ -64,10 +64,7 @@ namespace Cake.DotNetCoreEf.Database
                 builder.AppendQuoted(settings.Migration);
             }
 
-            foreach (IProcessArgument argument in builderArguments)
-            {
-                builder.Append(argument);
-            }
+            builder.AppendBuilder(builderArguments);
 
             if (!string.IsNullOrEmpty(settings.Context))
             {

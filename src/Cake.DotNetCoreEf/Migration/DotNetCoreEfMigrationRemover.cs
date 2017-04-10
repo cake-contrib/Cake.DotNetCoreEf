@@ -58,10 +58,7 @@ namespace Cake.DotNetCoreEf.Migration
             builder.Append("migrations");
             builder.Append("remove");
 
-            foreach (IProcessArgument argument in builderArguments)
-            {
-                builder.Append(argument);
-            }
+            builder.AppendBuilder(builderArguments);
 
             builder.SetContextSettings(arguments, project, settings);
 

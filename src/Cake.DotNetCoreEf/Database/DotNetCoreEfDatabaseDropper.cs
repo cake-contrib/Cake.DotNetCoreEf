@@ -58,10 +58,7 @@ namespace Cake.DotNetCoreEf.Database
             builder.Append("database");
             builder.Append("drop");
 
-            foreach (IProcessArgument argument in builderArguments)
-            {
-                builder.Append(argument);
-            }
+            builder.AppendBuilder(builderArguments);
 
             builder.SetContextSettings(arguments, project, settings);
 

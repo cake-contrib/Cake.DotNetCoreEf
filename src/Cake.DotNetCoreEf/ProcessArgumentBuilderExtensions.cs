@@ -12,9 +12,9 @@ namespace Cake.DotNetCoreEf
     { 
         public static void AppendBuilder(this ProcessArgumentBuilder builder, ProcessArgumentBuilder arguments)
         {
-            foreach (IProcessArgument argument in builder)
+            foreach (IProcessArgument argument in arguments)
             {
-                arguments.Append(argument);
+                builder.Append(argument);
             }
         }
 

@@ -22,6 +22,31 @@ namespace Cake.DotNetCoreEf
         /// </summary>
         public string Environment { get; set; }
 
+        /// <summary>
+        /// The startup project to use.
+        /// </summary>
+        public string StartupProject { get; set; }
+
+        /// <summary>
+        /// The project to use.
+        /// </summary>
+        public string Project { get; set; }
+
+        /// <summary>
+        /// The target framework.
+        /// </summary>
+        public string Framework { get; set; }
+
+        /// <summary>
+        /// The configuration to use.
+        /// </summary>
+        public string Configuration { get; set; }
+
+        /// <summary>
+        /// The MSBuild project extensions path. Defaults to "obj".
+        /// </summary>
+        public string MsBuildProjectExtensionsPath { get; set; }
+
         public void SetProject(string project)
         {
             if (string.IsNullOrWhiteSpace(project))

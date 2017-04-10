@@ -88,12 +88,14 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Migration
             var fixture = new DotNetCoreEfMigrationScripterFixture();
             fixture.Settings.Context = "CakeContext";
             fixture.Settings.From = "201702062047_Migration";
-            fixture.Settings.To = "201702062048_Migration"; 
+            fixture.Settings.To = "201702062048_Migration";
+            fixture.Settings.Configuration = "release";
+            fixture.Settings.MsBuildProjectExtensionsPath = "test-obj";
             // When
             var result = fixture.Run();
 
             // Then
-            Assert.Equal("ef migrations script \"201702062047_Migration\" \"201702062048_Migration\" --context \"CakeContext\"", result.Args);
+            Assert.Equal("ef migrations script \"201702062047_Migration\" \"201702062048_Migration\" --configuration \"release\" --msbuildprojectextensionspath \"test-obj\" --context \"CakeContext\"", result.Args);
         }
     }
 }

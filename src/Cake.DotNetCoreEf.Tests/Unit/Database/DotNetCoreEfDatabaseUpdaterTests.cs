@@ -87,11 +87,14 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Database
             var fixture = new DotNetCoreEfDatabaseUpdaterFixture();
             fixture.Settings.Context = "CakeContext";
             fixture.Settings.Migration = "0";
+            fixture.Settings.Configuration = "release";
+            fixture.Settings.MsBuildProjectExtensionsPath = "test-obj";
+
             // When
             var result = fixture.Run();
 
             // Then
-            Assert.Equal("ef database update \"0\" --context \"CakeContext\"", result.Args);
+            Assert.Equal("ef database update \"0\" --configuration \"release\" --msbuildprojectextensionspath \"test-obj\" --context \"CakeContext\"", result.Args);
         }
     }
 }

@@ -6,7 +6,7 @@ Cake.DotNetCoreEf is an Addin that extends [Cake](http://cakebuild.net/) for exe
 
 ## Information
 
-||Stable|Pre-release|
+| |Stable|Pre-release|
 |:--:|:--:|:--:|
 |GitHub Release|-|[![GitHub release](https://img.shields.io/github/release/cake-contrib/Cake.DotNetCoreEf.svg)](https://github.com/cake-contrib/Cake.DotNetCoreEf/releases/latest)|
 |NuGet|[![NuGet](https://img.shields.io/nuget/v/Cake.DotNetCoreEf.svg)](https://www.nuget.org/packages/Cake.DotNetCoreEf)|[![NuGet](https://img.shields.io/nuget/vpre/Cake.DotNetCoreEf.svg)](https://www.nuget.org/packages/Cake.DotNetCoreEf)|

@@ -486,6 +486,31 @@
             The environment to use. If omitted, "Development" is used.
             </summary>
         </member>
+        <member name="P:Cake.DotNetCoreEf.DotNetCoreEfSettings.StartupProject">
+            <summary>
+            The startup project to use.
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.DotNetCoreEfSettings.Project">
+            <summary>
+            The project to use.
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.DotNetCoreEfSettings.Framework">
+            <summary>
+            The target framework.
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.DotNetCoreEfSettings.Configuration">
+            <summary>
+            The configuration to use.
+            </summary>
+        </member>
+        <member name="P:Cake.DotNetCoreEf.DotNetCoreEfSettings.MsBuildProjectExtensionsPath">
+            <summary>
+            The MSBuild project extensions path. Defaults to "obj".
+            </summary>
+        </member>
         <member name="T:Cake.DotNetCoreEf.NamespaceDoc">
             <summary>
             This namespace contains DotNetCoreEf aliases for the DotNetCoreEf command line utility.

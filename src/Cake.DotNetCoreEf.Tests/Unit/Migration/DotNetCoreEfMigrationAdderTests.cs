@@ -89,11 +89,13 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Migration
             fixture.Settings.Context = "CakeContext";
             fixture.Settings.Json = true;
             fixture.Settings.Migration = "201702062047_Migration";
+            fixture.Settings.Configuration = "release";
+            fixture.Settings.MsBuildProjectExtensionsPath = "test-obj";
             // When
             var result = fixture.Run();
 
             // Then
-            Assert.Equal("ef migrations add \"201702062047_Migration\" --context \"CakeContext\" --json", result.Args);
+            Assert.Equal("ef migrations add \"201702062047_Migration\" --configuration \"release\" --msbuildprojectextensionspath \"test-obj\" --context \"CakeContext\" --json", result.Args);
         }
     }
 }

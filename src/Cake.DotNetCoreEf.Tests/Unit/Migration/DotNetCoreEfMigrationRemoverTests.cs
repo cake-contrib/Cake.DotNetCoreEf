@@ -88,11 +88,14 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Migration
             var fixture = new DotNetCoreEfMigrationRemoverFixture();
             fixture.Settings.Context = "CakeContext";
             fixture.Settings.Force = true;
+            fixture.Settings.Configuration = "release";
+            fixture.Settings.MsBuildProjectExtensionsPath = "test-obj";
+
             // When
             var result = fixture.Run();
 
             // Then
-            Assert.Equal("ef migrations remove --context \"CakeContext\" --force", result.Args);
+            Assert.Equal("ef migrations remove --configuration \"release\" --msbuildprojectextensionspath \"test-obj\" --context \"CakeContext\" --force", result.Args);
         }
     }
 }

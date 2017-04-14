@@ -50,7 +50,8 @@ namespace Cake.DotNetCoreEf.Database
 
         private ProcessArgumentBuilder GetArguments(string project, ProcessArgumentBuilder arguments, DotNetCoreEfDatabaseUpdateSettings settings)
         {
-            ProcessArgumentBuilder builder = CreateArgumentBuilder(settings);
+            ProcessArgumentBuilder builder = new ProcessArgumentBuilder();
+            ProcessArgumentBuilder builderArguments = CreateArgumentBuilder(settings);
 
             builder.Append("ef");
             builder.Append("database");
@@ -62,6 +63,8 @@ namespace Cake.DotNetCoreEf.Database
             {
                 builder.AppendQuoted(settings.Migration);
             }
+
+            builder.AppendBuilder(builderArguments);
 
             if (!string.IsNullOrEmpty(settings.Context))
             {

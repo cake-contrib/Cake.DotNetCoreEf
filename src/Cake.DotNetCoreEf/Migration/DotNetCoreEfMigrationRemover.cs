@@ -51,11 +51,14 @@ namespace Cake.DotNetCoreEf.Migration
 
         private ProcessArgumentBuilder GetArguments(string project, ProcessArgumentBuilder arguments, DotNetCoreEfMigrationRemoveSettings settings)
         {
-            ProcessArgumentBuilder builder = CreateArgumentBuilder(settings);
+            ProcessArgumentBuilder builder = new ProcessArgumentBuilder();
+            ProcessArgumentBuilder builderArguments = CreateArgumentBuilder(settings);
 
             builder.Append("ef");
             builder.Append("migrations");
             builder.Append("remove");
+
+            builder.AppendBuilder(builderArguments);
 
             builder.SetContextSettings(arguments, project, settings);
 

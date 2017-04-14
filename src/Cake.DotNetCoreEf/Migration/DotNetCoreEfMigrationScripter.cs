@@ -51,7 +51,8 @@ namespace Cake.DotNetCoreEf.Migration
 
         private ProcessArgumentBuilder GetArguments(string project, ProcessArgumentBuilder arguments, DotNetCoreEfMigrationScriptSettings settings)
         {
-            ProcessArgumentBuilder builder = CreateArgumentBuilder(settings);
+            ProcessArgumentBuilder builder = new ProcessArgumentBuilder();
+            ProcessArgumentBuilder builderArguments = CreateArgumentBuilder(settings);
 
             builder.Append("ef");
             builder.Append("migrations");
@@ -68,6 +69,7 @@ namespace Cake.DotNetCoreEf.Migration
             {
                 builder.AppendQuoted(settings.To);
             }
+            builder.AppendBuilder(builderArguments);
 
             if (!string.IsNullOrWhiteSpace(settings.Output))
             {

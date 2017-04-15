@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.DotNetCoreEf/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.DotNetCoreEf/assets/img/favicon.ico" type="image/x-icon">
-        <title>Docs - API - DotNetCoreEfMigrationRemover.Remove(string, ProcessArgumentBuilder, DotNetCoreEfMigrationRemoveSettings) Method</title>
+        <title>Docs - API - ProcessArgumentBuilderExtensions.AppendBuilder(ProcessArgumentBuilder, ProcessArgumentBuilder) Method</title>
         <link href="/Cake.DotNetCoreEf/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.DotNetCoreEf/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.DotNetCoreEf/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -72,8 +72,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Syntax">Syntax</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Parameters">Parameters</a></p>
 <p><a href="#ReturnValue">Return Value</a></p>
 <hr class="infobar-hidden">
@@ -127,14 +126,13 @@
                     <ul class="sidebar-menu">
                         
 			<li class="header">Namespace</li>
-		<li><a href="/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Migration">Cake<wbr>.DotNetCoreEf<wbr>.Migration</a></li>
+		<li><a href="/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf">Cake<wbr>.DotNetCoreEf</a></li>
 		<li class="header">Type</li>
-		<li><a href="/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationRemover">Dot<wbr>Net<wbr>Core<wbr>Ef<wbr>Migration<wbr>Remover</a></li>
+		<li><a href="/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf/ProcessArgumentBuilderExtensions">Process<wbr>Argument<wbr>Builder<wbr>Extensions</a></li>
 		<li role="separator" class="divider"></li>
-			<li class="header">Constructors</li>
-				<li><a href="/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationRemover/E19487A6">Dot<wbr>Net<wbr>Core<wbr>Ef<wbr>Migration<wbr>Remover<wbr>(IFileSystem, <wbr>ICakeEnvironment, <wbr>IProcessRunner, <wbr>IToolLocator)<wbr></a></li>
 			<li class="header">Method Members</li>
-				<li class="selected"><a href="/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationRemover/64BE3C88">Remove<wbr>(string, <wbr>Process<wbr>Argument<wbr>Builder, <wbr>Dot<wbr>Net<wbr>Core<wbr>Ef<wbr>Migration<wbr>Remove<wbr>Settings)<wbr></a></li>
+				<li class="selected"><a href="/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf/ProcessArgumentBuilderExtensions/767D366C">AppendBuilder<wbr>(<wbr>Process<wbr>Argument<wbr>Builder, <wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></li>
+				<li><a href="/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf/ProcessArgumentBuilderExtensions/47ADE6DE">SetContextSettings<wbr>(<wbr>Process<wbr>Argument<wbr>Builder, <wbr>Process<wbr>Argument<wbr>Builder, <wbr>string, <wbr>Dot<wbr>Net<wbr>Core<wbr>Ef<wbr>Context<wbr>Settings)<wbr></a></li>
 
 
                     </ul>
@@ -148,33 +146,29 @@
 
 
 <section class="content-header">
-			<h3><a href="/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationRemover">Dot<wbr>Net<wbr>Core<wbr>Ef<wbr>Migration<wbr>Remover</a>.</h3>
-	<h1>Remove<wbr>(string, <wbr>Process<wbr>Argument<wbr>Builder, <wbr>Dot<wbr>Net<wbr>Core<wbr>Ef<wbr>Migration<wbr>Remove<wbr>Settings)<wbr> <small>Method</small></h1>
+			<h3><a href="/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf/ProcessArgumentBuilderExtensions">Process<wbr>Argument<wbr>Builder<wbr>Extensions</a>.</h3>
+	<h1>AppendBuilder<wbr>(<wbr>Process<wbr>Argument<wbr>Builder, <wbr>Process<wbr>Argument<wbr>Builder)<wbr> <small>Method</small></h1>
 </section>
 <section class="content">
 	
 	
-		<h1 id="Summary">Summary</h1>
-	<div class="lead">
-    Remove migrations for the project using the specified path with arguments and settings.
-    </div>
-
+	
 		<div class="panel panel-default">
   			<div class="panel-body">	
 				<dl class="dl-horizontal">	
 						
 						<dt>Namespace</dt>
-						<dd><a href="/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Migration">Cake<wbr>.DotNetCoreEf<wbr>.Migration</a></dd>
+						<dd><a href="/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf">Cake<wbr>.DotNetCoreEf</a></dd>
 					
 						<dt>Containing Type</dt>
-						<dd><a href="/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationRemover">Dot<wbr>Net<wbr>Core<wbr>Ef<wbr>Migration<wbr>Remover</a></dd>		
+						<dd><a href="/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf/ProcessArgumentBuilderExtensions">Process<wbr>Argument<wbr>Builder<wbr>Extensions</a></dd>		
 					
 				</dl>
   			</div>
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public void Remove(string project, ProcessArgumentBuilder arguments, DotNetCoreEfMigrationRemoveSettings settings)</code></pre>
+	<pre><code>public static void AppendBuilder(this ProcessArgumentBuilder builder, ProcessArgumentBuilder arguments)</code></pre>
 
 
 
@@ -192,19 +186,14 @@
 					</tr>
 				</thead>
 					<tbody><tr>
-						<td>project</td>
-						<td>string</td>
-						<td>The target project path.</td>
+						<td>builder</td>
+						<td>Process<wbr>Argument<wbr>Builder</td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>arguments</td>
 						<td>Process<wbr>Argument<wbr>Builder</td>
-						<td>The arguments.</td>
-					</tr>
-					<tr>
-						<td>settings</td>
-						<td><a href="/Cake.DotNetCoreEf/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationRemoveSettings">Dot<wbr>Net<wbr>Core<wbr>Ef<wbr>Migration<wbr>Remove<wbr>Settings</a></td>
-						<td>The settings.</td>
+						<td></td>
 					</tr>
 			</tbody></table>
 		</div>

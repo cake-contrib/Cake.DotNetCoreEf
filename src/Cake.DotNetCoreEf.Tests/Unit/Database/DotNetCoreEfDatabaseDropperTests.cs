@@ -89,12 +89,17 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Database
             fixture.Settings.Force = true;
             fixture.Settings.Configuration = "release";
             fixture.Settings.MsBuildProjectExtensionsPath = "test-obj";
+            fixture.Settings.Help = true;
+            fixture.Settings.Framework = "netcoreapp2.0";
+            fixture.Settings.Environment = "Development";
+            fixture.Settings.StartupProject = "..\\src\\test.csproj";
+            fixture.Settings.Project = "..\\src\\runner.csproj";
 
             // When
             var result = fixture.Run();
 
             // Then
-            Assert.Equal("ef database drop --configuration \"release\" --msbuildprojectextensionspath \"test-obj\" --context \"CakeContext\" --force", result.Args);
+            Assert.Equal("ef database drop --help --environment \"Development\" --startup-project \"..\\src\\test.csproj\" --project \"..\\src\\runner.csproj\" --configuration \"release\" --framework \"netcoreapp2.0\" --msbuildprojectextensionspath \"test-obj\" --context \"CakeContext\" --force", result.Args);
         }
     }
 }

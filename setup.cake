@@ -8,6 +8,9 @@ BuildParameters.SetParameters(context: Context,
                             title: "Cake.DotNetCoreEf",
                             repositoryOwner: "cake-contrib",
                             repositoryName: "Cake.DotNetCoreEf",
+                            shouldRunDotNetCorePack: true,
+                            shouldRunDupFinder: false,
+                            shouldRunInspectCode: false,
                             appVeyorAccountName: "cakecontrib");
 
 BuildParameters.PrintParameters(Context);
@@ -19,4 +22,4 @@ ToolSettings.SetToolSettings(context: Context,
                             testCoverageExcludeByAttribute: "*.ExcludeFromCodeCoverage*",
                             testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs");
 
-Build.Run();
+Build.RunDotNetCore();

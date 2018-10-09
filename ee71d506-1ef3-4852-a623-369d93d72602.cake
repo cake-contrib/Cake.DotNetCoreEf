@@ -1,1 +1,0 @@
-#tool nuget:?package=GitVersion.CommandLine&version=3.6.2

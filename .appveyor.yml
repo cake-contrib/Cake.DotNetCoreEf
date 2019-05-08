@@ -19,3 +19,9 @@ branches:
     - master
     - /release/.*/
     - /hotfix/.*/
+
+#---------------------------------#
+#  Build Cache                    #
+#---------------------------------#
+cache:
+- 'tools -> setup.cake,tools/packages.config'

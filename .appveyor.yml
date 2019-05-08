@@ -1,14 +1,10 @@
 #---------------------------------#
-#  Initialization                 #
-#---------------------------------#
-init:
-  - git config --global core.autocrlf true
-
-#---------------------------------#
 #  Build Script                   #
 #---------------------------------#
 build_script:
   - ps: .\build.ps1 -Target AppVeyor
+
+image: Visual Studio 2017
 
 # Tests
 test: off
@@ -28,5 +24,4 @@ branches:
 #  Build Cache                    #
 #---------------------------------#
 cache:
-- src\packages -> src\**\packages.config
-- tools -> setup.cake
+- 'tools -> setup.cake,tools/packages.config'

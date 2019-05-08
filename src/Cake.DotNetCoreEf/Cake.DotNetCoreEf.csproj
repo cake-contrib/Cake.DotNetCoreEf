@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -15,7 +15,7 @@
     <Authors>mvput</Authors>
     <Owners>mvput,cake-contrib</Owners>
     <PackageProjectUrl>https://github.com/cake-contrib/Cake.DotNetCoreEf</PackageProjectUrl>
-    <PackageIconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</PackageIconUrl>
+    <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
     <PackageLicenseUrl>https://github.com/cake-contrib/Cake.DotNetCoreEf/blob/master/LICENSE</PackageLicenseUrl>
     <tags>cake script cli netcore efcore</tags>
     <Copyright>Copyright (c) Cake Contributions 2016 - Present</Copyright>
@@ -23,8 +23,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="0.28.0" PrivateAssets="All" />
-    <PackageReference Include="Cake.Common" Version="0.28.0" PrivateAssets="All" />
+    <PackageReference Include="Cake.Core" Version="0.33.0" PrivateAssets="All" />
+    <PackageReference Include="Cake.Common" Version="0.33.0" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>

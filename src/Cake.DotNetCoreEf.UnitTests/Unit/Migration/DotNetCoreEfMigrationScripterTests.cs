@@ -91,11 +91,12 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Migration
             fixture.Settings.To = "201702062048_Migration";
             fixture.Settings.Configuration = "release";
             fixture.Settings.MsBuildProjectExtensionsPath = "test-obj";
+            fixture.Settings.NoBuild = true;
             // When
             var result = fixture.Run();
 
             // Then
-            Assert.Equal("ef migrations script \"201702062047_Migration\" \"201702062048_Migration\" --configuration \"release\" --msbuildprojectextensionspath \"test-obj\" --context \"CakeContext\"", result.Args);
+            Assert.Equal("ef migrations script \"201702062047_Migration\" \"201702062048_Migration\" --configuration \"release\" --msbuildprojectextensionspath \"test-obj\" --context \"CakeContext\" --no-build", result.Args);
         }
     }
 }

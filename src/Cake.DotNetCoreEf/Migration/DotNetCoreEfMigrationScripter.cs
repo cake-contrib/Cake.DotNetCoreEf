@@ -88,6 +88,11 @@ namespace Cake.DotNetCoreEf.Migration
                 builder.Append("--idempotent");
             }
 
+            if (settings.NoBuild)
+            {
+                builder.Append("--no-build");
+            }
+
             // Arguments
             if (!arguments.IsNullOrEmpty())
             {

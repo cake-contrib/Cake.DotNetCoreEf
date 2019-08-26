@@ -24,4 +24,4 @@ branches:
 #  Build Cache                    #
 #---------------------------------#
 cache:
-- 'tools -> setup.cake,tools/packages.config'
+- 'tools -> recipe.cake,tools/packages.config'

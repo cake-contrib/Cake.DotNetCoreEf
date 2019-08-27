@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <OutputType>Library</OutputType>
-    <DebugType>full</DebugType>
+    <DebugType>pdbonly</DebugType>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -16,7 +16,9 @@
     <Owners>mvput,cake-contrib</Owners>
     <PackageProjectUrl>https://github.com/cake-contrib/Cake.DotNetCoreEf</PackageProjectUrl>
     <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
-    <PackageLicenseUrl>https://github.com/cake-contrib/Cake.DotNetCoreEf/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/cake-contrib/Cake.DotNetCoreEf.git</RepositoryUrl>
     <tags>cake script cli netcore efcore</tags>
     <Copyright>Copyright (c) Cake Contributions 2016 - Present</Copyright>
     <Company>Cake Contributions</Company>

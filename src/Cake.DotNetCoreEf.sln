@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "meta", "meta", "{77CAC347-B
 		..\nuspec\Cake.DotNetCoreEf.nuspec = ..\nuspec\Cake.DotNetCoreEf.nuspec
 		..\LICENSE = ..\LICENSE
 		..\README.md = ..\README.md
-		..\setup.cake = ..\setup.cake
+		..\recipe.cake = ..\recipe.cake
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.DotNetCoreEf.UnitTests", "Cake.DotNetCoreEf.UnitTests\Cake.DotNetCoreEf.UnitTests.csproj", "{8C502FAA-A13C-4051-9716-1C41A4596BED}"

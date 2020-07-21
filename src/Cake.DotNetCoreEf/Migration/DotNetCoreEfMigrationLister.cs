@@ -12,7 +12,7 @@ namespace Cake.DotNetCoreEf.Migration
     /// <summary>
     /// Support for script migrations using .NET Core cli tooling
     /// </summary>
-    public class DotNetCoreEfMigrationScriptLister : DotNetCoreEfTool<DotNetCoreEfMigrationScriptListerSettings>
+    public class DotNetCoreEfMigrationLister : DotNetCoreEfTool<DotNetCoreEfMigrationListerSettings>
     {
         private readonly ICakeEnvironment _environment;
 
@@ -23,7 +23,7 @@ namespace Cake.DotNetCoreEf.Migration
         /// <param name="environment">The environment.</param>
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tool locator.</param>
-        public DotNetCoreEfMigrationScriptLister(
+        public DotNetCoreEfMigrationLister(
             IFileSystem fileSystem,
             ICakeEnvironment environment,
             IProcessRunner processRunner,
@@ -39,7 +39,7 @@ namespace Cake.DotNetCoreEf.Migration
         /// <param name="project">The target project path.</param>
         /// <param name="arguments">The arguments.</param>
         /// <param name="settings">The settings.</param>
-        public string Script(string project, ProcessArgumentBuilder arguments, DotNetCoreEfMigrationScriptListerSettings settings)
+        public string Script(string project, ProcessArgumentBuilder arguments, DotNetCoreEfMigrationListerSettings settings)
         {
             if (settings == null)
             {
@@ -51,7 +51,7 @@ namespace Cake.DotNetCoreEf.Migration
             return result?.FirstOrDefault();
         }
 
-        private ProcessArgumentBuilder GetArguments(string project, ProcessArgumentBuilder arguments, DotNetCoreEfMigrationScriptListerSettings settings)
+        private ProcessArgumentBuilder GetArguments(string project, ProcessArgumentBuilder arguments, DotNetCoreEfMigrationListerSettings settings)
         {
             ProcessArgumentBuilder builder = new ProcessArgumentBuilder();
             ProcessArgumentBuilder builderArguments = CreateArgumentBuilder(settings);

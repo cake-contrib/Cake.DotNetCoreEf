@@ -426,7 +426,7 @@ namespace Cake.DotNetCoreEf
         [CakeMethodAlias]
         [CakeAliasCategory("MigrationScript")]
         [CakeNamespaceImport("Cake.DotNetCoreEf.Migration")]
-        public static string DotNetCoreEfMigrationList(this ICakeContext context, string project, ProcessArgumentBuilder arguments, DotNetCoreEfMigrationScriptListerSettings settings)
+        public static string DotNetCoreEfMigrationList(this ICakeContext context, string project, ProcessArgumentBuilder arguments, DotNetCoreEfMigrationListerSettings settings)
         {
             if (context == null)
             {
@@ -435,10 +435,10 @@ namespace Cake.DotNetCoreEf
 
             if (settings == null)
             {
-                settings = new DotNetCoreEfMigrationScriptListerSettings();
+                settings = new DotNetCoreEfMigrationListerSettings();
             }
 
-            var runner = new DotNetCoreEfMigrationScriptLister(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
+            var runner = new DotNetCoreEfMigrationLister(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
             return runner.Script(project, arguments, settings);
         }
     }

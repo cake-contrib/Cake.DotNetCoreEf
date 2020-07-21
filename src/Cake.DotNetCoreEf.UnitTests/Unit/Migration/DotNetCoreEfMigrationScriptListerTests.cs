@@ -11,7 +11,7 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Migration
         public void Should_Throw_If_Settings_Are_Null()
         {
             // Given
-            var fixture = new DotNetCoreEfMigrationScriptListerFixture();
+            var fixture = new DotNetCoreEfMigrationListerFixture();
             fixture.Project = "./src/";
             fixture.Settings = null;
             fixture.GivenDefaultToolDoNotExist();
@@ -27,7 +27,7 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Migration
         public void Should_Throw_If_Process_Was_Not_Started()
         {
             // Given
-            var fixture = new DotNetCoreEfMigrationScriptListerFixture();
+            var fixture = new DotNetCoreEfMigrationListerFixture();
             fixture.Project = "./src/";
             fixture.GivenProcessCannotStart();
 
@@ -58,7 +58,7 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Migration
         public void Should_Add_Mandatory_Arguments()
         {
             // Given
-            var fixture = new DotNetCoreEfMigrationScriptListerFixture();
+            var fixture = new DotNetCoreEfMigrationListerFixture();
 
             // When
             var result = fixture.Run();
@@ -71,7 +71,7 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Migration
         public void Should_Add_Path_Arguments()
         {
             // Given
-            var fixture = new DotNetCoreEfMigrationScriptListerFixture();
+            var fixture = new DotNetCoreEfMigrationListerFixture();
             fixture.Project = "./tools/tool/";
             fixture.Arguments = "--args=\"value\"";
             // When
@@ -86,7 +86,7 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Migration
         public void Should_Add_Additional_Settings()
         {
             // Given
-            var fixture = new DotNetCoreEfMigrationScriptListerFixture();
+            var fixture = new DotNetCoreEfMigrationListerFixture();
             fixture.Settings.StartupProject = "./src/MyMvcProject";
             fixture.Settings.Project = "./src/MyDataProject";
             fixture.Settings.Configuration = "release";

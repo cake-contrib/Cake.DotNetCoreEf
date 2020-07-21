@@ -2,7 +2,7 @@
 
 namespace Cake.DotNetCoreEf.Tests.Fixtures.Migration
 {
-    internal sealed class DotNetCoreEfMigrationScriptListerFixture : DotNetCoreEfFixture<DotNetCoreEfMigrationScriptListerSettings>
+    internal sealed class DotNetCoreEfMigrationListerFixture : DotNetCoreEfFixture<DotNetCoreEfMigrationListerSettings>
     {
         public string Project { get; set; }
 
@@ -10,7 +10,7 @@ namespace Cake.DotNetCoreEf.Tests.Fixtures.Migration
 
         protected override void RunTool()
         {
-            var tool = new DotNetCoreEfMigrationScriptLister(FileSystem, Environment, ProcessRunner, Tools);
+            var tool = new DotNetCoreEfMigrationLister(FileSystem, Environment, ProcessRunner, Tools);
             tool.Script(Project, Arguments, Settings);
         }
     }

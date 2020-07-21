@@ -9,7 +9,7 @@ namespace Cake.DotNetCoreEf.Migration
     /// <summary>
     /// Contains settings used by <see cref="DotNetCoreEfMigrationScriptLister"/>.
     /// </summary>
-    public class DotNetCoreEfMigrationScriptListerSettings : DotNetCoreEfSettings
+    public class DotNetCoreEfMigrationListerSettings : DotNetCoreEfSettings
     {
         /// <summary>
         /// Prefix characters in output.

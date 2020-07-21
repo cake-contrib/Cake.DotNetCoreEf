@@ -403,5 +403,43 @@ namespace Cake.DotNetCoreEf
             var runner = new DotNetCoreEfMigrationScripter(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
             runner.Script(project, arguments, settings);
         }
+
+        /// <summary>
+        /// List all migrations
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="project">The project path.</param>
+        /// <param name="arguments">The arguments.</param>
+        /// <param name="settings">The settings.</param>
+        /// <example>
+        /// <code>
+        ///     var settings = new DotNetCoreEfMigrationScriptListerSettings
+        ///     {
+        ///         Context = SchoolContext,
+        ///         StartupProject = "./src/MvcProject",
+        ///         NoBuild = true
+        ///     };
+        ///
+        ///     DotNetCoreEfMigrationScript("./src/Project", "--args", settings);
+        /// </code>
+        /// </example>
+        [CakeMethodAlias]
+        [CakeAliasCategory("MigrationScript")]
+        [CakeNamespaceImport("Cake.DotNetCoreEf.Migration")]
+        public static void DotNetCoreEfMigrationList(this ICakeContext context, string project, ProcessArgumentBuilder arguments, DotNetCoreEfMigrationScriptListerSettings settings)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            if (settings == null)
+            {
+                settings = new DotNetCoreEfMigrationScriptListerSettings();
+            }
+
+            var runner = new DotNetCoreEfMigrationScriptLister(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools);
+            runner.Script(project, arguments, settings);
+        }
     }
 }

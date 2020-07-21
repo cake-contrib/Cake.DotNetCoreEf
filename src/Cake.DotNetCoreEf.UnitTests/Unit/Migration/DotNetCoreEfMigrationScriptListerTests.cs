@@ -38,20 +38,21 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Migration
             AssertExtensions.IsCakeException(result, ".NET Core CLI: Process was not started.");
         }
 
-        [Fact]
-        public void Should_Throw_If_Process_Has_A_Non_Zero_Exit_Code()
-        {
-            // Given
-            var fixture = new DotNetCoreEfMigrationScriptListerFixture();
-            fixture.Project = "./src/";
-            fixture.GivenProcessExitsWithCode(1);
+        // Removed. Process returns json
+        //[Fact]
+        //public void Should_Throw_If_Process_Has_A_Non_Zero_Exit_Code()
+        //{
+        //    // Given
+        //    var fixture = new DotNetCoreEfMigrationScriptListerFixture();
+        //    fixture.Project = "./src/";
+        //    fixture.GivenProcessExitsWithCode(1);
 
-            // When
-            var result = Record.Exception(() => fixture.Run());
+        //    // When
+        //    var result = Record.Exception(() => fixture.Run());
 
-            // Then
-            AssertExtensions.IsCakeException(result, ".NET Core CLI: Process returned an error (exit code 1).");
-        }
+        //    // Then
+        //    AssertExtensions.IsCakeException(result, ".NET Core CLI: Process returned an error (exit code 1).");
+        //}
 
         [Fact]
         public void Should_Add_Mandatory_Arguments()

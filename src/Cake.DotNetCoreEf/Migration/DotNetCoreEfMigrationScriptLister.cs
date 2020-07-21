@@ -39,14 +39,16 @@ namespace Cake.DotNetCoreEf.Migration
         /// <param name="project">The target project path.</param>
         /// <param name="arguments">The arguments.</param>
         /// <param name="settings">The settings.</param>
-        public void Script(string project, ProcessArgumentBuilder arguments, DotNetCoreEfMigrationScriptListerSettings settings)
+        public string Script(string project, ProcessArgumentBuilder arguments, DotNetCoreEfMigrationScriptListerSettings settings)
         {
             if (settings == null)
             {
                 throw new ArgumentNullException(nameof(settings));
             }
 
-            Run(settings, GetArguments(project, arguments, settings));
+            var result = RunProcess(settings, GetArguments(project, arguments, settings)).GetStandardOutput();
+
+            return result?.FirstOrDefault();
         }
 
         private ProcessArgumentBuilder GetArguments(string project, ProcessArgumentBuilder arguments, DotNetCoreEfMigrationScriptListerSettings settings)

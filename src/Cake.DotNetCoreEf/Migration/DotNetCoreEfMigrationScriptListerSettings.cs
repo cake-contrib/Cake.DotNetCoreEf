@@ -12,16 +12,6 @@ namespace Cake.DotNetCoreEf.Migration
     public class DotNetCoreEfMigrationScriptListerSettings : DotNetCoreEfSettings
     {
         /// <summary>
-        /// The starting migration. If omitted, '0' (the initial database) is used.
-        /// </summary>
-        public string From { get; set; }
-
-        /// <summary>
-        /// The ending migration. If omitted, the last migration is used.
-        /// </summary>
-        public string To { get; set; }
-
-        /// <summary>
         /// Prefix characters in output.
         /// </summary>
         public bool PrefixOutput { get; set; } = false;

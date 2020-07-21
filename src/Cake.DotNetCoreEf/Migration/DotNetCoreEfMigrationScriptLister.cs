@@ -58,20 +58,9 @@ namespace Cake.DotNetCoreEf.Migration
 
             builder.Append("ef");
             builder.Append("migrations");
-            builder.Append("script");
             builder.Append("list");
 
             settings.SetProject(project);
-
-            if (!string.IsNullOrWhiteSpace(settings.From))
-            {
-                builder.AppendQuoted(settings.From);
-            }
-
-            if (!string.IsNullOrWhiteSpace(settings.To))
-            {
-                builder.AppendQuoted(settings.To);
-            }
 
             if (!string.IsNullOrWhiteSpace(settings.Project))
             {

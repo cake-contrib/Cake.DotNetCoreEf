@@ -64,7 +64,7 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Migration
             var result = fixture.Run();
 
             // Then
-            Assert.Equal("ef migrations script list --no-build --json", result.Args);
+            Assert.Equal("ef migrations list --no-build --json", result.Args);
         }
 
         [Fact]
@@ -78,7 +78,7 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Migration
             var result = fixture.Run();
 
             // Then
-            Assert.Equal("ef migrations script list --no-build --json --args=\"value\"", result.Args);
+            Assert.Equal("ef migrations list --no-build --json --args=\"value\"", result.Args);
             Assert.Equal("/Working/tools/tool", result.Process.WorkingDirectory.FullPath);
         }
 
@@ -89,17 +89,14 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Migration
             var fixture = new DotNetCoreEfMigrationScriptListerFixture();
             fixture.Settings.StartupProject = "./src/MyMvcProject";
             fixture.Settings.Project = "./src/MyDataProject";
-            fixture.Settings.From = "201702062047_Migration";
-            fixture.Settings.To = "201702062048_Migration";
             fixture.Settings.Configuration = "release";
             fixture.Settings.PrefixOutput = true;
-            fixture.Settings.MsBuildProjectExtensionsPath = "test-obj";
             fixture.Settings.NoBuild = true;
             // When
             var result = fixture.Run();
 
             // Then
-            Assert.Equal("ef migrations script list \"201702062047_Migration\" \"201702062048_Migration\" --project \"./src/MyDataProject\" --startup-project \"./src/MyMvcProject\" --prefix-output --no-build --json", result.Args);
+            Assert.Equal("ef migrations list --project \"./src/MyDataProject\" --startup-project \"./src/MyMvcProject\" --prefix-output --no-build --json", result.Args);
         }
     }
 }

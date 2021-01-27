@@ -17,4 +17,4 @@ Within this release, the following things have been done...
 - [__#13__](https://github.com/cake-contrib/Cake.DotNetCoreEf/issues/13) Support for migrations remove
 - [__#14__](https://github.com/cake-contrib/Cake.DotNetCoreEf/issues/14) Support for migrations script 
 
-Please do not hesitate to reach out in the [Gitter Channel](https://gitter.im/cake-contrib/Lobby) if you have any issues using this addin.
+Please do not hesitate to reach out in the [GitHub discussions](https://github.com/cake-build/cake/discussions), if you have any issues using this addin.

@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
 	<channel>
-		<title />
+		<title>Cake.DotNetCoreEf</title>
 		<link>http://cake-contrib.github.io/Cake.DotNetCoreEf</link>
 		<description />
-		<copyright>2017</copyright>
-		<pubDate>Wed, 22 Nov 2017 19:37:53 GMT</pubDate>
-		<lastBuildDate>Wed, 22 Nov 2017 19:37:53 GMT</lastBuildDate>
+		<copyright>2021</copyright>
+		<pubDate>Wed, 27 Jan 2021 20:14:17 GMT</pubDate>
+		<lastBuildDate>Wed, 27 Jan 2021 20:14:17 GMT</lastBuildDate>
 		<item>
 			<title>New Release - 0.3.0</title>
 			<link>http://cake-contrib.github.io/Cake.DotNetCoreEf/blog/new-release-0.3.0</link>
@@ -14,6 +14,17 @@
 			<author>mvput</author>
 			<guid>http://cake-contrib.github.io/Cake.DotNetCoreEf/blog/new-release-0.3.0</guid>
 			<pubDate>Mon, 06 Feb 2017 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;h1 id="support-for-migrations"&gt;Support for Migrations&lt;/h1&gt;
+&lt;p&gt;This version brings support for migrations using the dotnet ef cli.&lt;/p&gt;
+&lt;p&gt;Within this release, the following things have been done...&lt;/p&gt;
+&lt;h2 id="features"&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.DotNetCoreEf/issues/12"&gt;&lt;strong&gt;#12&lt;/strong&gt;&lt;/a&gt; Support for migrations add&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.DotNetCoreEf/issues/13"&gt;&lt;strong&gt;#13&lt;/strong&gt;&lt;/a&gt; Support for migrations remove&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.DotNetCoreEf/issues/14"&gt;&lt;strong&gt;#14&lt;/strong&gt;&lt;/a&gt; Support for migrations script&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please do not hesitate to reach out in the &lt;a href="https://github.com/cake-build/cake/discussions"&gt;GitHub discussions&lt;/a&gt;, if you have any issues using this addin.&lt;/p&gt;
+</content:encoded>
 		</item>
 		<item>
 			<title>New Release - 0.2.0</title>
@@ -22,6 +33,21 @@
 			<author>gep13</author>
 			<guid>http://cake-contrib.github.io/Cake.DotNetCoreEf/blog/new-release-0.2.0</guid>
 			<pubDate>Thu, 02 Feb 2017 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;h1 id="first-release-using-cake.recipe"&gt;First release using Cake.Recipe&lt;/h1&gt;
+&lt;p&gt;Welcome to the first release of the Cake.DotNetCoreEf addin that is making use of the Cake.Recipe package.  This is a collection of build scripts, that aims to provide a consistent set of build steps, across a number of different repositories.&lt;/p&gt;
+&lt;p&gt;Within this release, the following things have been done...&lt;/p&gt;
+&lt;h2 id="improvements"&gt;Improvements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.DotNetCoreEf/issues/11"&gt;&lt;strong&gt;#11&lt;/strong&gt;&lt;/a&gt; Add pdb file to nuget package&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.DotNetCoreEf/issues/10"&gt;&lt;strong&gt;#10&lt;/strong&gt;&lt;/a&gt; Update to latest Cake&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.DotNetCoreEf/issues/4"&gt;&lt;strong&gt;#4&lt;/strong&gt;&lt;/a&gt; Convert this repo to use Cake.Recipe&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="documentation"&gt;Documentation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-contrib/Cake.DotNetCoreEf/issues/8"&gt;&lt;strong&gt;#8&lt;/strong&gt;&lt;/a&gt; Add Wyam Documentation generation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please do not hesitate to reach out in the &lt;a href="https://github.com/cake-build/cake/discussions"&gt;GitHub discussions&lt;/a&gt; if you have any issues using this addin.&lt;/p&gt;
+</content:encoded>
 		</item>
 	</channel>
 </rss>

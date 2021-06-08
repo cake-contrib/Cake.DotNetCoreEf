@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net5.0;net461</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <OutputType>Library</OutputType>
     <DebugType>pdbonly</DebugType>
@@ -11,7 +11,7 @@
     <PackageId>Cake.DotNetCoreEf</PackageId>
     <Title>Cake.DotNetCoreEf</Title>
     <Summary>.NET Core EntityFrameworkCore addin for cake build.</Summary>
-    <Description>Cake addin for executing commands with the dotnet ef command line interface (CLI). </Description>
+    <Description>Cake addin for executing commands with the dotnet ef command line interface (CLI).</Description>
     <Authors>mvput</Authors>
     <Owners>mvput,cake-contrib</Owners>
     <PackageProjectUrl>https://github.com/cake-contrib/Cake.DotNetCoreEf</PackageProjectUrl>
@@ -19,14 +19,14 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/cake-contrib/Cake.DotNetCoreEf.git</RepositoryUrl>
-    <tags>cake script cli netcore efcore</tags>
+    <tags>cake script cli netcore efcore cake-addin</tags>
     <Copyright>Copyright (c) Cake Contributions 2016 - Present</Copyright>
     <Company>Cake Contributions</Company>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="1.1.0" PrivateAssets="All" />
-    <PackageReference Include="Cake.Common" Version="1.1.0" PrivateAssets="All" />
+    <PackageReference Include="Cake.Core" Version="1.0.0" PrivateAssets="All" />
+    <PackageReference Include="Cake.Common" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>

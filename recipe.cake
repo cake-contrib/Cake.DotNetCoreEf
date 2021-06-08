@@ -1,4 +1,4 @@
-#load nuget:?package=Cake.Recipe&version=1.1.2
+#load nuget:?package=Cake.Recipe&version=2.2.1
 
 Environment.SetVariableNames();
 
@@ -8,18 +8,20 @@ BuildParameters.SetParameters(context: Context,
                             title: "Cake.DotNetCoreEf",
                             repositoryOwner: "cake-contrib",
                             repositoryName: "Cake.DotNetCoreEf",
-                            shouldRunDotNetCorePack: true,
-                            shouldRunDupFinder: false,
-                            shouldRunInspectCode: false,
+                            shouldRunCodecov: false,
+                            shouldGenerateDocumentation: false, // until wyam oin recipe is fixed
                             appVeyorAccountName: "cakecontrib",
-                            shouldRunGitVersion: true);
+                            shouldRunDotNetCorePack: true);
 
 BuildParameters.PrintParameters(Context);
 
 ToolSettings.SetToolSettings(context: Context,
                             dupFinderExcludePattern: new string[] {
-                                BuildParameters.RootDirectoryPath + "/src/Cake.DotNetCoreEf.Tests/**/*.cs" },
-                            testCoverageFilter: "+[*]* -[xunit.*]* -[Cake.Core]* -[Cake.Testing]* -[*.Tests]* ",
+                            	BuildParameters.RootDirectoryPath + "/src/**/*.AssemblyInfo.cs",
+                                BuildParameters.RootDirectoryPath + "/src/Cake.DotNetCoreEf/Migration/DotNetCoreEfMigrationLister.cs",
+                                BuildParameters.RootDirectoryPath + "/src/Cake.DotNetCoreEf/DotNetCoreEfTool.cs",
+                                BuildParameters.RootDirectoryPath + "/src/Cake.DotNetCoreEf.UnitTests/**/*.cs" },
+                            testCoverageFilter: "+[*]* -[xunit.*]* -[Cake.Core]* -[Cake.Testing]* -[*.Tests]* -[FakeItEasy]* -[FluentAssertions]* -[FluentAssertions.Core]*",
                             testCoverageExcludeByAttribute: "*.ExcludeFromCodeCoverage*",
                             testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs");
 

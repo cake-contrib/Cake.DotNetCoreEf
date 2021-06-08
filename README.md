@@ -25,11 +25,11 @@ Cake.DotNetCoreEf is an Addin that extends [Cake](http://cakebuild.net/) for exe
 
 - [Documentation](https://cake-contrib.github.io/Cake.DotNetCoreEf/)
 
-## Chat Room
+## Discussion
 
-Come join in the conversation about Cake.DotNetCoreEf in our Gitter Chat Room
+For questions and to discuss ideas & feature requests, use the [GitHub discussions on the Cake GitHub repository](https://github.com/cake-build/cake/discussions), under the [Extension Q&A](https://github.com/cake-build/cake/discussions/categories/extension-q-a) category.
 
-[![Join the chat at https://gitter.im/cake-contrib/Lobby](https://badges.gitter.im/cake-contrib/Lobby.svg)](https://gitter.im/cake-contrib/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join in the discussion on the Cake repository](https://img.shields.io/badge/GitHub-Discussions-green?logo=github)](https://github.com/cake-build/cake/discussions)
 
 ## Contribution GuideLines
 

@@ -10,7 +10,7 @@ using Cake.Core.Tooling;
 namespace Cake.DotNetCoreEf.Migration
 {
     /// <summary>
-    /// Support for script migrations using .NET Core cli tooling
+    /// Support for script migrations using .NET CLI tooling
     /// </summary>
     public class DotNetCoreEfMigrationLister : DotNetCoreEfTool<DotNetCoreEfMigrationListerSettings>
     {

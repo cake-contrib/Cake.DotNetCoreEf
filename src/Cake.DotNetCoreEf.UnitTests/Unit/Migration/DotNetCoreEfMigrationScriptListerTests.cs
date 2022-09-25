@@ -35,7 +35,7 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Migration
             var result = Record.Exception(() => fixture.Run());
 
             // Then
-            AssertExtensions.IsCakeException(result, ".NET Core CLI: Process was not started.");
+            AssertExtensions.IsCakeException(result, ".NET CLI: Process was not started.");
         }
 
         // Removed. Process returns json
@@ -51,7 +51,7 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Migration
         //    var result = Record.Exception(() => fixture.Run());
 
         //    // Then
-        //    AssertExtensions.IsCakeException(result, ".NET Core CLI: Process returned an error (exit code 1).");
+        //    AssertExtensions.IsCakeException(result, ".NET CLI: Process returned an error (exit code 1).");
         //}
 
         [Fact]

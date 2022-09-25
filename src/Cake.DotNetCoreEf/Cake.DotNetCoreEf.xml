@@ -6,7 +6,7 @@
     <members>
         <member name="T:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseUpdater">
             <summary>
-            Support for updating the database using .NET Core cli tooling
+            Support for updating the database using .NET CLI tooling
             </summary>
         </member>
         <member name="M:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseUpdater.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator)">
@@ -43,7 +43,7 @@
         </member>
         <member name="T:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropper">
             <summary>
-            Support for dropping the database using .NET Core cli tooling
+            Support for dropping the database using .NET CLI tooling
             </summary>
         </member>
         <member name="M:Cake.DotNetCoreEf.Database.DotNetCoreEfDatabaseDropper.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator)">
@@ -80,7 +80,7 @@
         </member>
         <member name="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationAdder">
             <summary>
-            Support for adding migrations using .NET Core cli tooling
+            Support for adding migrations using .NET CLI tooling
             </summary>
         </member>
         <member name="M:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationAdder.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator)">
@@ -127,7 +127,7 @@
         </member>
         <member name="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationRemover">
             <summary>
-            Support for removing migrations using .NET Core cli tooling
+            Support for removing migrations using .NET CLI tooling
             </summary>
         </member>
         <member name="M:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationRemover.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator)">
@@ -154,7 +154,7 @@
         </member>
         <member name="T:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationScripter">
             <summary>
-            Support for script migrations using .NET Core cli tooling
+            Support for script migrations using .NET CLI tooling
             </summary>
         </member>
         <member name="M:Cake.DotNetCoreEf.Migration.DotNetCoreEfMigrationScripter.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.IO.IProcessRunner,Cake.Core.Tooling.IToolLocator)">

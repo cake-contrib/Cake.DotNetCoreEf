@@ -11,7 +11,7 @@ using Cake.Core.Tooling;
 namespace Cake.DotNetCoreEf.Database
 {
     /// <summary>
-    /// Support for dropping the database using .NET Core cli tooling
+    /// Support for dropping the database using .NET CLI tooling
     /// </summary>
     public class DotNetCoreEfDatabaseDropper : DotNetCoreEfTool<DotNetCoreEfDatabaseDropSettings>
     {

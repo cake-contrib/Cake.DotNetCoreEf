@@ -34,7 +34,7 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Database
             var result = Record.Exception(() => fixture.Run());
 
             // Then
-            AssertExtensions.IsCakeException(result, ".NET Core CLI: Process was not started.");
+            AssertExtensions.IsCakeException(result, ".NET CLI: Process was not started.");
         }
 
         [Fact]
@@ -49,7 +49,7 @@ namespace Cake.DotNetCoreEf.Tests.Unit.Database
             var result = Record.Exception(() => fixture.Run());
 
             // Then
-            AssertExtensions.IsCakeException(result, ".NET Core CLI: Process returned an error (exit code 1).");
+            AssertExtensions.IsCakeException(result, ".NET CLI: Process returned an error (exit code 1).");
         }
 
         [Fact]

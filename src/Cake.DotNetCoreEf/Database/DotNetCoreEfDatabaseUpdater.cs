@@ -10,7 +10,7 @@ using Cake.Core.Tooling;
 namespace Cake.DotNetCoreEf.Database
 {
     /// <summary>
-    /// Support for updating the database using .NET Core cli tooling
+    /// Support for updating the database using .NET CLI tooling
     /// </summary>
     public class DotNetCoreEfDatabaseUpdater : DotNetCoreEfTool<DotNetCoreEfDatabaseUpdateSettings>
     {

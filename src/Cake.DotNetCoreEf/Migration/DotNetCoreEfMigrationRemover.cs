@@ -10,7 +10,7 @@ using Cake.Core.Tooling;
 namespace Cake.DotNetCoreEf.Migration
 {
     /// <summary>
-    /// Support for removing migrations using .NET Core cli tooling
+    /// Support for removing migrations using .NET CLI tooling
     /// </summary>
     public class DotNetCoreEfMigrationRemover : DotNetCoreEfTool<DotNetCoreEfMigrationRemoveSettings>
     {

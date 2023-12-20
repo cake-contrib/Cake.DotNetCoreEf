@@ -1,16 +1,11 @@
-﻿using Cake.Common.Tools.DotNetCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Cake.Common.Tools.DotNet;
 
 namespace Cake.DotNetCoreEf
 {
     /// <summary>
     /// Contains common settings used by <see cref="DotNetCoreEfTool{TSettings}" />.
     /// </summary>
-    public class DotNetCoreEfSettings : DotNetCoreSettings
+    public class DotNetCoreEfSettings : DotNetSettings
     {
         /// <summary>
         /// Show help information

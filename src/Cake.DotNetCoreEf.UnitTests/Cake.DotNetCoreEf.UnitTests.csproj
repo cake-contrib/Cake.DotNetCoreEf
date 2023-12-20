@@ -1,29 +1,29 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	  <TargetFrameworks>net6.0</TargetFrameworks>
+    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
 
 
 	  <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Common" Version="2.2.0" />
-    <PackageReference Include="Cake.Core" Version="2.2.0" />
-    <PackageReference Include="Cake.Testing" Version="2.2.0" />
-    <PackageReference Include="Castle.Core" Version="5.1.0" />
-    <PackageReference Include="coverlet.msbuild" Version="3.1.2">
+    <PackageReference Include="Cake.Common" Version="4.0.0" />
+    <PackageReference Include="Cake.Core" Version="4.0.0" />
+    <PackageReference Include="Cake.Testing" Version="4.0.0" />
+    <PackageReference Include="Castle.Core" Version="5.1.1" />
+    <PackageReference Include="coverlet.msbuild" Version="6.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.1" />
-    <PackageReference Include="xunit" Version="2.4.2" />
-    <PackageReference Include="xunit.analyzers" Version="1.0.0" />
-    <PackageReference Include="xunit.runner.console" Version="2.4.2">
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="xunit" Version="2.6.3" />
+    <PackageReference Include="xunit.analyzers" Version="1.7.0" />
+    <PackageReference Include="xunit.runner.console" Version="2.6.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>

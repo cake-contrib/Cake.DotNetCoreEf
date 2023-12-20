@@ -4,10 +4,6 @@ using Cake.Core.IO;
 using Cake.DotNetCoreEf.Database;
 using Cake.DotNetCoreEf.Migration;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cake.DotNetCoreEf
 {

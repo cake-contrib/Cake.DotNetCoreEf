@@ -1,9 +1,4 @@
-﻿using Cake.Common.Tools.DotNetCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Cake.Common.Tools.DotNet;
 using Cake.Core;
 using Cake.Core.IO;
 using Cake.Core.Tooling;
@@ -14,7 +9,7 @@ namespace Cake.DotNetCoreEf
     /// Base class for .NET Core EntityFrameworkCore  tools.
     /// </summary>
     /// <typeparam name="TSettings"></typeparam>
-    public class DotNetCoreEfTool<TSettings> : DotNetCoreTool<TSettings> where TSettings : DotNetCoreEfSettings
+    public class DotNetCoreEfTool<TSettings> : DotNetTool<TSettings> where TSettings : DotNetCoreEfSettings
     {
         /// <summary>
         ///

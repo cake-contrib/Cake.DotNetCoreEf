@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
+    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <OutputType>Library</OutputType>
     <DebugType>pdbonly</DebugType>
@@ -19,14 +19,20 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/cake-contrib/Cake.DotNetCoreEf.git</RepositoryUrl>
-    <tags>cake script cli netcore efcore cake-addin</tags>
+    <PackageTags>cake script cli netcore efcore cake-addin</PackageTags>
     <Copyright>Copyright (c) Cake Contributions 2016 - Present</Copyright>
     <Company>Cake Contributions</Company>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="Cake.Common" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Cake.Addin.Analyzer" Version="0.1.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Cake.Core" Version="4.0.0" PrivateAssets="All" />
+    <PackageReference Include="Cake.Common" Version="4.0.0" PrivateAssets="All" />
+
+    <PackageReference Include="CakeContrib.Guidelines" Version="1.5.1" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>

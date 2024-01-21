@@ -9,7 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "meta", "meta", "{77CAC347-B
 	ProjectSection(SolutionItems) = preProject
 		..\.appveyor.yml = ..\.appveyor.yml
 		..\build.ps1 = ..\build.ps1
-		..\nuspec\Cake.DotNetCoreEf.nuspec = ..\nuspec\Cake.DotNetCoreEf.nuspec
 		..\LICENSE = ..\LICENSE
 		..\README.md = ..\README.md
 		..\recipe.cake = ..\recipe.cake
